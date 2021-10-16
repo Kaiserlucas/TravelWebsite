@@ -1,0 +1,48 @@
+body {
+    background-color: lightblue;
+}
+
+.navbar {
+    background-color: #efefef;
+}
+
+#logo {
+    height: 150px;
+    width: 150px;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+}
+
+#banner {
+    height: 9em;
+    width: 100%;
+    grid-row-start: images;
+    grid-row-end: images;
+    grid-column-start: column2;
+    grid-column-end: column4;
+    justify-self: center;
+    align-self: center;
+}
+
+#karte {
+    width: 99vw;
+}
+
+.navbarLinks {
+    font-size: x-large;
+    justify-self: auto;
+    align-self: center;
+    word-spacing: 1em;
+    margin-left: 1em;
+    grid-column-start: column1;
+    grid-column-end: column4;
+    grid-row-start: links;
+    grid-row-end: links;
+}
+
+.navbar {
+    height: 200px;
+    display: grid;
+    grid-template-columns: [column1] 25% [column2] 25% [column3] 25% [column4] 25%;
+    grid-template-rows: [images] 75% [links] 25%;
+}
