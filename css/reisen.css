@@ -65,7 +65,7 @@ input[type="text"],
 input[type="date"] {
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin: 8px 0px;
+  margin: 8px 0;
 }
 
 input[type="text"] {
@@ -73,7 +73,7 @@ input[type="text"] {
 }
 
 input[type="date"] {
-  padding: 0px 58px;
+  padding: 0 58px;
 }
 
 input[type="submit"]:hover {
@@ -84,3 +84,41 @@ input[type="submit"]:hover {
   text-align: center;
   margin-top: 50px;
 }
+
+.trip {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  flex-direction: column;
+  background-color: #83A1CD;
+  width: 300px;
+  height:auto;
+  padding-bottom: 10px;
+  border-radius: 25px;
+  margin: 30px auto 30px;
+}
+
+.trip-element {
+  overflow-wrap: break-word;
+  margin-top: 10px;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.editButton {
+  background-color: beige;
+}
+
+.deleteButton {
+  background-color: lightcoral;
+}
+
+.editButton:hover {
+  background-color: #f9b75d;
+}
+
+.deleteButton:hover {
+  background-color: indianred;
+}
+
