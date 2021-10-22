@@ -1,27 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Karte</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="resources/logo.png"/>
-</head>
-<body>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/karte.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700"
+    />
+    <link rel="icon" type="image/png" href="resources/logo.png" />
 
+    <title>Karte</title>
+  </head>
+  <body>
     <!-- Navbar elements -->
     <div class="navbar">
-        <img src="resources/logo.png" alt="Logo" id="logo">
-        <img src="resources/banner.png" alt="Banner" id="banner">
-        <span class ="navbarLinks">
-            <a href="index.html">Startseite</a>
-            <a href="karte.html">Karte</a>
-            <a href="reisen.html">Reisen</a>
-            <a href="login.html">Login</a>
-        </span>
+      <ul class="navlist">
+        <li class="nav-item">
+          <a href="karte.html">
+            <img id="logo" src="resources/logo.png" alt="logo" />
+          </a>
+        </li>
+        <li class="nav-item"><a href="karte.html">Startseite</a></li>
+        <li class="nav-item"><a href="reisen.html">Reisen</a></li>
+        <li class="nav-item">
+          <form action="login.html">
+            <button>Logout</button>
+          </form>
+        </li>
+      </ul>
     </div>
-
-    <img src="resources/map.png" id="karte" alt="World Map with visited countries marked green">
-
-
-</body>
+    <!-- Map -->
+    <div class="map">
+      <img src="resources/map.png" alt="karte" />
+    </div>
+  </body>
 </html>
