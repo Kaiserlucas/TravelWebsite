@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700"
+    />
+    <title>Meine Reisen</title>
+    <link rel="stylesheet" href="css/reisen.css" />
+    <link rel="icon" type="image/png" href="resources/logo.png" />
+  </head>
+  <body>
+    <!-- Navbar elements -->
+    <div class="navbar">
+      <ul class="navlist">
+        <li class="nav-item">
+          <a href="karte.html">
+            <img id="logo" src="resources/logo.png" alt="logo" />
+          </a>
+        </li>
+        <li class="nav-item"><a href="karte.html">Startseite</a></li>
+        <li class="nav-item"><a href="reisen.html">Reisen</a></li>
+        <li class="nav-item">
+          <form action="login.html">
+            <button>Logout</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+    <!-- Trip elements -->
+    <div class="createtrip">
+      <form action="reisen.html">
+        <label for="travelname">Name der Reise</label>
+        <input type="text" id="travelname" name="travelname" />
+        <label for="destination">Wo soll es hingehen?</label>
+        <input type="text" id="destination" name="destination" />
+        <label for="startdate">Wann soll es losgehen?</label>
+        <input type="date" id="startdate" name="startdate" />
+        <label for="enddate">Wann wieder zurück?</label>
+        <input type="date" id="enddate" name="enddate" />
+        <input type="submit" />
+      </form>
+    </div>
+
+    <!-- Show trips -->
+    <div class="yourtrips">
+      <h2>Ihre Reisen:</h2>
+    </div>
+  </body>
+</html>
