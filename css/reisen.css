@@ -151,7 +151,7 @@ input[type="submit"]:hover {
 @media (max-width: 950px) {
   
   .nav-item:first-child img{
-    margin-left: 0;
+    margin-left: -30px;
   }
   .yourtrips{
     flex-direction: column;
