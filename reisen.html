@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700"
@@ -39,18 +41,18 @@
         <input type="date" id="startdate" name="startdate" />
         <label for="enddate">Wann wieder zurück?</label>
         <input type="date" id="enddate" name="enddate" />
-        <input type="submit" />
+        <input type="submit" value="Los" />
       </form>
     </div>
-
+    <h2 class="traveltext">Ihre Reisen</h2>
     <!-- Show trips -->
-    <div class="yourtrips"> <br>
-      <h2>Ihre Reisen:</h2>
+    <div class="yourtrips">
+  
 
       <!-- Dummy trips for mockup purposes. Remove later -->
-      <div class="trip">
-        <h3 class="trip-element">Dummy Reise</h3>
-        <p class="trip-element">Wien</p>
+      <div class="trip">   
+        <h3 class="trip-element">Deutschland Reise</h3>
+        <p class="trip-element">Dresden</p>
         <p class="trip-element">11.6.2021 - 19.6.2021</p>
         <form action="reisen.html">
           <button type="submit" class="trip-element editButton" >Bearbeiten</button>
@@ -61,8 +63,20 @@
       </div>
 
       <div class="trip">
-        <h3 class="trip-element">Dummy Reise mit einem sehr langem Namen</h3>
-        <p class="trip-element">Madrid</p>
+        <h3 class="trip-element">USA Reise</h3>
+        <p class="trip-element">Las Vegas</p>
+        <p class="trip-element">11.6.2021 - 19.6.2021</p>
+        <form action="reisen.html">
+          <button type="submit" class="trip-element editButton" >Bearbeiten</button>
+        </form>
+        <form action="reisen.html">
+          <button type="submit" class="trip-element deleteButton" >Entfernen</button>
+        </form>
+      </div>
+
+      <div class="trip">
+        <h3 class="trip-element">Japan Reise</h3>
+        <p class="trip-element">Tokyo</p>
         <p class="trip-element">17.3.2021 - 05.4.2021</p>
         <form action="reisen.html">
           <button type="submit" class="trip-element editButton" >Bearbeiten</button>
