@@ -1,13 +1,13 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  background-size: 160vh;
 }
 
 body {
   font-family: Montserrat, sans-serif;
   background-image: url("../resources/wolkenundso.jpg");
   background-repeat: no-repeat;
+
 }
 
 input[type="submit"] {
@@ -30,9 +30,10 @@ input[type="submit"]:hover {
   margin-top: 20px;
 }
 .login {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 input[type="email"],
@@ -45,4 +46,11 @@ input[type="password"] {
 
 input[type="submit"]:hover {
   background-color: #f99853;
+}
+
+@media (max-width: 950px) {
+  body{
+    background-size: 160vh;
+  }
+ 
 }
