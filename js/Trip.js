@@ -7,3 +7,5 @@ class Trip {
         this.end = end;
     }
 }
+
+export default Trip;
