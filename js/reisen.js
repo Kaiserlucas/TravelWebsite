@@ -3,8 +3,8 @@ import {getTrips,deleteTrip,saveTrip,editTrip} from "./api.js";
 import Trip from './Trip.js';
 
 const displayData = async () => {
-    const trips = await getTrips();
     const yourTrips = document.querySelector(".yourtrips");
+    const trips = await getTrips();
 
     //Clear all existing trips
     while (yourTrips.firstChild) {
@@ -74,14 +74,16 @@ const displayData = async () => {
 }
 
 function init() {
-    const createButton = document.querySelector("#createbutton");
-    createButton.addEventListener("click", () => {
+    const createButton = document.querySelector("#createform");
+    createButton.addEventListener("submit", () => {
         const name = document.querySelector("#travelname");
         const destination = document.querySelector("#destination");
         const start = document.querySelector("#startdate");
         const end = document.querySelector("#enddate");
         const trip = new Trip(1,name.value,destination.value,start.value,end.value);
-        saveTrip(trip)
+        saveTrip(trip).then(() => {
+            displayData();
+        })
     })
 
     displayData();
