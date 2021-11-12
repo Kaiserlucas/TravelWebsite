@@ -20,8 +20,6 @@ const saveTrip = async (trip) => {
 
 const deleteTrip = async (id) =>{
     const oldTrips = await getTrips();
-    console.log(id);
-    console.log(oldTrips)
     const newTrips = oldTrips.filter(X=>X.id !== parseInt(id));
     localStorage.setItem("trips",JSON.stringify(newTrips))
 }
