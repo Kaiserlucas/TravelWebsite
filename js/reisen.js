@@ -135,7 +135,7 @@ const displayData = async () => {
 
     //Get previous values
     tripnameInput.value = parent.querySelector('.name').innerText;
-    destinationInput.value = parent.querySelector('.destination').innerText;
+
     const date = parent.querySelector('.date').innerText.split(' ');
     startdateInput.value = date[0];
     enddateInput.value = date[2];
@@ -157,6 +157,7 @@ const displayData = async () => {
     editForm.appendChild(submitButton);
 
     createCountryDropdown(data,destinationInput);
+    destinationInput.value = parent.querySelector('.destination').innerText;
 
     editForm.addEventListener('submit', () => {
       const id = parent.id;
