@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="module" src="js/reisen.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700"
@@ -34,20 +34,19 @@
     <div class="createtrip">
       <form action="" id="createform">
         <label for="travelname">Name der Reise</label>
-        <input type="text" id="travelname" name="travelname" required/>
+        <input type="text" id="travelname" name="travelname" required />
         <label for="destination">Wo soll es hingehen?</label>
-        <input type="text" id="destination" name="destination" required/>
+        <select id="destination" name="destination"></select>
         <label for="startdate">Wann soll es losgehen?</label>
-        <input type="date" id="startdate" name="startdate" required/>
+        <input type="date" id="startdate" name="startdate" required />
         <label for="enddate">Wann wieder zurück?</label>
-        <input type="date" id="enddate" name="enddate" required/>
+        <input type="date" id="enddate" name="enddate" required />
         <input type="submit" id="createbutton" value="Los" />
       </form>
     </div>
     <h2 class="traveltext">Ihre Reisen</h2>
     <!-- Show trips -->
-    <div class="yourtrips">
-
-    </div>
+    <div class="yourtrips"></div>
+    <script type="module" src="js/reisen.js"></script>
   </body>
 </html>
