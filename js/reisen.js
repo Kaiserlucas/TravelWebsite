@@ -3,17 +3,15 @@ import Trip from './Trip.js';
 
 const data = await getJson('../resources/countries.geojson');
 
-const createCountryDropdown = async (data) => {
-  const destination = document.querySelector('#destination');
-
+const createCountryDropdown = async (data, element) => {
   for (const country of data.features) {
     const dropdownElement = document.createElement('option');
     dropdownElement.value = country.properties.ADMIN;
     dropdownElement.text = country.properties.ADMIN;
-    destination.appendChild(dropdownElement);
+    element.appendChild(dropdownElement);
   }
 };
-createCountryDropdown(data);
+createCountryDropdown(data,document.querySelector('#destination'));
 
 const displayData = async () => {
   const yourTrips = document.querySelector('.yourtrips');
@@ -85,7 +83,7 @@ const displayData = async () => {
 
     const editForm = document.createElement('form');
     const tripnameInput = document.createElement('input');
-    const destinationInput = document.createElement('input');
+    const destinationInput = document.createElement('select');
     const startdateInput = document.createElement('input');
     const enddateInput = document.createElement('input');
     const submitButton = document.createElement('input');
@@ -114,7 +112,6 @@ const displayData = async () => {
          **/
 
     tripnameInput.setAttribute('type', 'text');
-    destinationInput.setAttribute('type', 'text');
     startdateInput.setAttribute('type', 'date');
     enddateInput.setAttribute('type', 'date');
     submitButton.setAttribute('type', 'submit');
@@ -158,6 +155,8 @@ const displayData = async () => {
     //editForm.appendChild(enddateLabel);
     editForm.appendChild(enddateInput);
     editForm.appendChild(submitButton);
+
+    createCountryDropdown(data,destinationInput);
 
     editForm.addEventListener('submit', () => {
       const id = parent.id;
