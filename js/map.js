@@ -1,6 +1,7 @@
 import { getTrips, getJson } from './api.js';
 
 const visitedCountries = async () => {
+
   const countriePromises = await getTrips();
   const countries = [];
   for (const [i, trip] of countriePromises.entries()) {
@@ -10,26 +11,29 @@ const visitedCountries = async () => {
 };
 
 const countries = await visitedCountries();
-const myCustomStyle = {
-  stroke: false,
-  fill: true,
-  fillColor: '#000',
-  fillOpacity: 1,
-};
 
 const data = await getJson('../resources/countries.geojson');
 const map = L.map('map').setView([0, 0], 3);
 L.geoJSON(data, {
   clickable: true,
-  style: myCustomStyle,
+  stroke: false,
+  fill: true,
+  fillColor: '#B0B0B0',
+  fillOpacity: 1,
   style: function (feature) {
     for (const country of countries) {
       switch (feature.properties.ADMIN) {
         case country:
           return {
-            fillColor: '#000',
+            fill: false,
           };
       }
     }
   },
 }).addTo(map);
+
+let osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  noWrap: true,
+});
+osm.addTo(map);
