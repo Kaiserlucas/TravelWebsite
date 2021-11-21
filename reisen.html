@@ -8,6 +8,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap"
+      rel="stylesheet"
+    />
     <title>Meine Reisen</title>
     <link rel="stylesheet" href="css/reisen.css" />
     <link rel="icon" type="image/png" href="resources/logo.png" />
@@ -31,7 +35,10 @@
       </ul>
     </div>
     <!-- Trip elements -->
+
     <div class="createtrip">
+      <h2 class="traveltext">Fügen Sie eine Reise hinzu</h2>
+
       <form action="" id="createform">
         <label for="travelname">Name der Reise</label>
         <input type="text" id="travelname" name="travelname" required />
@@ -44,9 +51,11 @@
         <input type="submit" id="createbutton" value="Los" />
       </form>
     </div>
-    <h2 class="traveltext">Ihre Reisen</h2>
-    <!-- Show trips -->
-    <div class="yourtrips"></div>
+    <div class="ballon">
+      <h2 class="traveltext">Ihre Reisen</h2>
+      <!-- Show trips -->
+      <div class="yourtrips"></div>
+    </div>
     <script type="module" src="js/reisen.js"></script>
   </body>
 </html>
