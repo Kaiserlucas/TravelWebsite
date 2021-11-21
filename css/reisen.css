@@ -67,6 +67,9 @@ input[type='submit']:hover {
   background-size: cover;
   font-size: 1.6rem;
 }
+.createtrip label{
+  font-size: 1rem;
+}
 .createtrip input,
 select {
   display: flex;
@@ -75,6 +78,7 @@ select {
 
 .createtrip input[type='submit'] {
   align-self: center;
+  margin-left: 20px;
 }
 
 input[type='text'],
@@ -158,7 +162,7 @@ input[type='submit']:hover {
   background-image: url("../resources/ballon3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: calc(100vh - 368px);
+  height: calc(100vh - 370px);
   font-size: 1.6rem;
   
 }
