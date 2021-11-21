@@ -15,14 +15,15 @@
     <!-- Login elements -->
     <h1 class="logintext">Login</h1>
     <div class="login">
-      <form action="karte.html">
+      <form action="#" id="loginForm" onsubmit="return false">
         <label for="email">E-Mail Adresse</label><br />
-        <input type="email" id="email" name="email" /><br />
+        <input type="email" id="email" name="email" required/><br />
         <label for="password">Passwort</label><br />
-        <input type="password" id="password" name="password" /><br />
+        <input type="password" id="password" name="password" required/><br />
         <br />
         <input type="submit" value="Login" />
       </form>
+      <h2 id="error"></h2>
     </div>
     <script src="js/login.js"></script>
   </body>
