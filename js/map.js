@@ -27,6 +27,10 @@ L.geoJSON(data, {
           return {
             fill: false,
           };
+        case "Antarctica":
+          return {
+            fill: false,
+          };
       }
     }
   },
