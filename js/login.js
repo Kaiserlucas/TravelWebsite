@@ -14,7 +14,7 @@ loginForm.addEventListener('submit', () => {
     headers: {
       'content-type': 'application/www-x-form-urlencoded',
     },
-    body: loginInformation,
+    body: encoded,
     method: 'POST',
     mode: 'cors',
   };
