@@ -9,12 +9,13 @@ const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=
 loginForm.addEventListener('submit', () => {
   const loginInformation = { email: email.value, password: password.value };
   const encoded = toUrlEncoded(loginInformation);
+  const json = JSON.stringify(loginInformation);
   console.log(encoded);
   const fetchParams = {
     headers: {
       'content-type': 'application/json',
     },
-    body: loginInformation,
+    body: json,
     method: 'POST',
     mode: 'cors',
   };
