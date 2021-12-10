@@ -5,32 +5,52 @@ async function getJson(url) {
 }
 
 const getTrips = async () => {
-  return JSON.parse(localStorage.getItem('trips')) || [];
+  const response = await fetch(
+    'https://webdevelopment-travelsite.herokuapp.com/trips'
+  );
+  const data = await response.json();
+  return data['trips'];
 };
 
 const saveTrip = async (trip) => {
-  let oldTrips = await getTrips();
-
-  //Set id for trip
-  let ids = oldTrips.map((X) => X.id);
-  if (ids.length === 0) {
-    trip.id = 1;
-  } else {
-    trip.id = Math.max(...ids) + 1;
-  }
-
-  oldTrips.push(trip);
-  localStorage.setItem('trips', JSON.stringify(oldTrips));
+  const fetchParams = {
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: trip,
+    method: 'POST',
+    mode: 'cors',
+  };
+  fetch('https://webdevelopment-travelsite.herokuapp.com/trips', fetchParams)
+    .then((data) => {
+      return data.json();
+    })
+    .then((res) => console.log(res))
+    .catch((error) => console.log(error));
 };
 
-const deleteTrip = async (id) => {
-  const oldTrips = await getTrips();
-  const newTrips = oldTrips.filter((X) => X.id !== parseInt(id));
-  localStorage.setItem('trips', JSON.stringify(newTrips));
+const deleteTrip = async (uuid) => {
+  const fetchParams = {
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: uuid,
+    method: 'POST',
+    mode: 'cors',
+  };
+  fetch(
+    `https://webdevelopment-travelsite.herokuapp.com/trips/${uuid}`,
+    fetchParams
+  )
+    .then((data) => {
+      return data.json();
+    })
+    .then((res) => console.log(res))
+    .catch((error) => console.log(error));
 };
 
 const editTrip = async (trip) => {
-  await deleteTrip(trip.id);
+  await deleteTrip(trip.uuid);
   await saveTrip(trip);
 };
 

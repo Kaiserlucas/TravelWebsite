@@ -1,6 +1,6 @@
 class Trip {
-  constructor(id, tripName, destination, start, end) {
-    this.id = id;
+  constructor(uuid, tripName, destination, start, end) {
+    this.uuid = uuid;
     this.tripName = tripName;
     this.destination = destination;
     this.start = start;
