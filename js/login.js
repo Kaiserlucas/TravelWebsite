@@ -6,23 +6,10 @@ const password = document.querySelector('#password');
 const wantedPassword = 'hunter2';*/
 const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
 
-toUrlEncoded({
-   hello: 'world',
-   message: "JavaScript is cool"
-});
-// => "hello=world&message=JavaScript%20is%20cool"
-
 loginForm.addEventListener('submit', () => {
   const loginInformation = { email: email.value, password: password.value };
-  const encoded = toUrlEncoded(encoded);
+  const encoded = toUrlEncoded(loginInformation);
   console.log(encoded);
-
-toUrlEncoded({
-   hello: 'world',
-   message: "JavaScript is cool"
-});
-// => "hello=world&message=JavaScript%20is%20cool"
-    JSON.stringify(loginInformation).encod;
   const fetchParams = {
     headers: {
       'content-type': 'application/json',
