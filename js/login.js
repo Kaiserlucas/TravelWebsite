@@ -12,9 +12,9 @@ loginForm.addEventListener('submit', () => {
   console.log(encoded);
   const fetchParams = {
     headers: {
-      'content-type': 'application/www-x-form-urlencoded',
+      'content-type': 'application/json',
     },
-    body: encoded,
+    body: loginInformation,
     method: 'POST',
     mode: 'cors',
   };
