@@ -18,6 +18,7 @@ loginForm.addEventListener('submit', () => {
     body: json,
     method: 'POST',
     mode: 'cors',
+    credentials: 'include',
   };
   fetch('https://webdevelopment-travelsite.herokuapp.com/login', fetchParams)
     .then((data) => {
