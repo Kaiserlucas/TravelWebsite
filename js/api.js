@@ -13,7 +13,7 @@ const getTrips = async () => {
 };
 
 const saveTrip = async (trip) => {
-  const content = { name: trip.name, destination: trip.destination, startDate: trip.start, endDate: trip.end };
+  const content = { name: trip.tripName, destination: trip.destination, startDate: trip.start, endDate: trip.end };
   const json = JSON.stringify(content);
 
   const fetchParams = {
