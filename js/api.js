@@ -6,7 +6,7 @@ async function getJson(url) {
 
 const getTrips = async () => {
   const response = await fetch(
-    'https://webdevelopment-travelsite.herokuapp.com/trips'
+    'https://webdevelopment-travelsite.herokuapp.com/trips',{credentials: 'include'}
   );
   const data = await response.json();
   return data['trips'];
@@ -20,6 +20,7 @@ const saveTrip = async (trip) => {
     body: trip,
     method: 'POST',
     mode: 'cors',
+    credentials: 'include',
   };
   fetch('https://webdevelopment-travelsite.herokuapp.com/trips', fetchParams)
     .then((data) => {
@@ -37,6 +38,7 @@ const deleteTrip = async (uuid) => {
     body: uuid,
     method: 'POST',
     mode: 'cors',
+    credentials: 'include',
   };
   fetch(
     `https://webdevelopment-travelsite.herokuapp.com/trips/${uuid}`,
