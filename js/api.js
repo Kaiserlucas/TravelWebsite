@@ -13,11 +13,14 @@ const getTrips = async () => {
 };
 
 const saveTrip = async (trip) => {
+  const content = { name: trip.name, destination: trip.destination, startDate: trip.start, endDate: trip.end };
+  const json = JSON.stringify(content);
+
   const fetchParams = {
     headers: {
       'content-type': 'application/json',
     },
-    body: trip,
+    body: json,
     method: 'POST',
     mode: 'cors',
     credentials: 'include',
