@@ -9,14 +9,16 @@ const wantedPassword = 'hunter2';*/
 loginForm.addEventListener('submit', () => {
   const loginInformation = { email: email.value, password: password.value };
  // const encoded = toUrlEncoded(loginInformation);
-  console.log(encoded);
+  const json = JSON.stringify(loginInformation);
+ // console.log(encoded);
   const fetchParams = {
     headers: {
       'content-type': 'application/json',
     },
-    body: JSON.stringify(loginInformation),
+    body: json,
     method: 'POST',
     mode: 'cors',
+    credentials: 'include',
   };
   fetch('https://webdevelopment-travelsite.herokuapp.com/login', fetchParams)
     .then((data) => {
