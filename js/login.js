@@ -4,13 +4,13 @@ const password = document.querySelector('#password');
 
 /*const wantedEmail = 'huehne@htw-berlin.de';
 const wantedPassword = 'hunter2';*/
-const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
+//const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
 
 loginForm.addEventListener('submit', () => {
   const loginInformation = { email: email.value, password: password.value };
-  const encoded = toUrlEncoded(loginInformation);
+ // const encoded = toUrlEncoded(loginInformation);
   const json = JSON.stringify(loginInformation);
-  console.log(encoded);
+ // console.log(encoded);
   const fetchParams = {
     headers: {
       'content-type': 'application/json',
