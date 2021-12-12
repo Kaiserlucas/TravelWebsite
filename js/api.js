@@ -27,7 +27,7 @@ const saveTrip = async (trip) => {
   };
   fetch('https://webdevelopment-travelsite.herokuapp.com/trips', fetchParams)
     .then((data) => {
-      return JSON.parse(data.json());
+      return data.json();
     })
     .then((res) => console.log(res))
     .catch((error) => console.log(error));
