@@ -20,13 +20,23 @@ loginForm.addEventListener('submit', () => {
     mode: 'cors',
     credentials: 'include',
   };
+
+  function handleResponse(res) {
+    if(res.status == 200) {
+      window.location.href = 'karte.html';
+    } else {
+      alert('Falscher Benutzername oder Password.');
+    }
+  }
+
   fetch('https://webdevelopment-travelsite.herokuapp.com/login', fetchParams)
     .then((data) => {
       return data.json();
     })
-    .then((res) => console.log(res))
+    .then((res) =>
+        handleResponse(res))
     .catch((error) =>
-        alert('Falscher Benutzername oder Password.'))
+        console.log(error))
 
 
   /*if (email.value === wantedEmail && password.value === wantedPassword) {
