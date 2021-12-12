@@ -77,7 +77,7 @@ const displayData = async () => {
 
   async function removeTrip(evt) {
     await deleteTrip(evt.target.parentNode.parentNode.id);
-    await displayData();
+    setTimeout(displayData,2000);
   }
 
   function makeTripEditable(evt) {
@@ -171,7 +171,7 @@ const displayData = async () => {
       editTrip(
         new Trip(id, editedName, editedDestination, editedStart, editedEnd)
       ).then(() => {
-        displayData();
+        setTimeout(displayData,2000)
       });
     });
 
