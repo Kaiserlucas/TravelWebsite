@@ -37,13 +37,12 @@ const deleteTrip = async (uuid) => {
     headers: {
       'content-type': 'application/json',
     },
-    body: uuid,
     method: 'DELETE',
     mode: 'cors',
     credentials: 'include',
   };
   fetch(
-    `https://webdevelopment-travelsite.herokuapp.com/trips/${uuid}`,
+    `https://webdevelopment-travelsite.herokuapp.com/trips/?tripId=${uuid}`,
     fetchParams
   )
     .then((data) => {
