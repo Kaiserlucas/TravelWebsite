@@ -8,8 +8,7 @@ const getTrips = async () => {
   const response = await fetch(
     'https://webdevelopment-travelsite.herokuapp.com/trips',{credentials: 'include'}
   );
-  const data = await response.json();
-  return JSON.parse(data);
+  return await response.json();
 };
 
 const saveTrip = async (trip) => {
