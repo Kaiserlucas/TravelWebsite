@@ -24,10 +24,10 @@ loginForm.addEventListener('submit', () => {
   function handleResponse(res) {
     console.log(res);
     console.log(res.status)
-    if(res.status == 200) {
-      window.location.href = 'karte.html';
-    } else {
+    if(res.message === 'Bad email or password') {
       alert('Falscher Benutzername oder Password.');
+    } else {
+      window.location.href = 'karte.html';
     }
   }
 
