@@ -197,8 +197,7 @@ function init() {
       end.value
     );
     saveTrip(trip).then(() => {
-      window.location.reload();
-      displayData();
+      setTimeout(displayData,2000)
     });
   });
 
