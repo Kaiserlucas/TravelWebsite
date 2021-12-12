@@ -33,11 +33,14 @@ const saveTrip = async (trip) => {
 };
 
 const deleteTrip = async (uuid) => {
+  const content = { uuid: uuid };
+  const json = JSON.stringify(content);
+
   const fetchParams = {
     headers: {
       'content-type': 'application/json',
     },
-    body: uuid,
+    body: json,
     method: 'DELETE',
     mode: 'cors',
     credentials: 'include',
