@@ -77,7 +77,7 @@ const displayData = async () => {
 
   async function removeTrip(evt) {
     await deleteTrip(evt.target.parentNode.parentNode.id);
-    displayData();
+    setTimeout(displayData,500)
     setTimeout(displayData,2000);
   }
 
@@ -174,7 +174,7 @@ const displayData = async () => {
       editTrip(
         new Trip(id, editedName, editedDestination, editedStart, editedEnd)
       ).then(() => {
-        displayData();
+        setTimeout(displayData,500)
         setTimeout(displayData,2000)
       });
     });
@@ -203,7 +203,7 @@ function init() {
       end.value
     );
     saveTrip(trip).then(() => {
-      displayData();
+      setTimeout(displayData,500)
       setTimeout(displayData,2000)
     });
   });
