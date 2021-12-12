@@ -73,10 +73,9 @@ const displayData = async () => {
     buttonDelete.addEventListener('click', removeTrip, false);
   });
 
-  function removeTrip(evt) {
-    deleteTrip(evt.target.parentNode.parentNode.id).then(() => {
-      displayData();
-    });
+  async function removeTrip(evt) {
+    await deleteTrip(evt.target.parentNode.parentNode.id);
+    await displayData();
   }
 
   function makeTripEditable(evt) {
