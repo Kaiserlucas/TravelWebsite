@@ -184,22 +184,24 @@ const displayData = async () => {
 
 function init() {
   const createButton = document.querySelector('#createform');
-  createButton.addEventListener('submit', () => {
+
+  async function saveTrip(evt) {
     const name = document.querySelector('#travelname');
     const destination = document.querySelector('#destination');
     const start = document.querySelector('#startdate');
     const end = document.querySelector('#enddate');
     const trip = new Trip(
-      1,
-      name.value,
-      destination.value,
-      start.value,
-      end.value
+        1,
+        name.value,
+        destination.value,
+        start.value,
+        end.value
     );
-    saveTrip(trip).then(() => {
-      displayData();
-    });
-  });
+    await saveTrip(trip);
+    await displayData();
+  }
+
+  createButton.addEventListener('click', saveTrip, false);
 
   displayData();
 }
