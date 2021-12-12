@@ -49,9 +49,11 @@ const displayData = async () => {
     //Buttons
     const formEdit = document.createElement('form');
     formEdit.setAttribute('action', 'reisen.html');
+    formEdit.setAttribute('onsubmit','return false;')
 
     const formDelete = document.createElement('form');
     formDelete.setAttribute('action', 'reisen.html');
+    formEdit.setAttribute('onsubmit','return false;')
 
     const buttonEdit = document.createElement('button');
     buttonEdit.setAttribute('type', 'submit');
