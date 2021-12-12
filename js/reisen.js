@@ -197,8 +197,6 @@ function init() {
       end.value
     );
     saveTrip(trip).then(() => {
-      setTimeout(function() {
-      },2000);
       displayData();
     });
   });
