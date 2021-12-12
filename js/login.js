@@ -22,10 +22,10 @@ loginForm.addEventListener('submit', () => {
   };
 
   function handleResponse(res) {
-    if(res.status == 200) {
-      window.location.href = 'karte.html';
-    } else {
+    if(res.status == 401) {
       alert('Falscher Benutzername oder Password.');
+    } else {
+      window.location.href = 'karte.html';
     }
   }
 
