@@ -4,10 +4,18 @@ async function getJson(url) {
   return response.json();
 }
 
+function handleResponse(res) {
+  if(res.message === 'Bad email or password') {
+    alert('Falscher Benutzername oder Passwort.');
+  } else {
+    window.location.href = 'login.html';
+  }
+}
+
 const getTrips = async () => {
   const response = await fetch(
     'https://webdevelopment-travelsite.herokuapp.com/trips',{credentials: 'include'}
-  );
+  ).then((res)=>handleResponse(res));
   return await response.json();
 };
 
@@ -28,7 +36,7 @@ const saveTrip = async (trip) => {
     .then((data) => {
       return data.json();
     })
-    .then((res) => console.log(res))
+    .then((res) => handleResponse(res))
     .catch((error) => console.log(error));
 };
 
@@ -52,7 +60,7 @@ const deleteTrip = async (uuid) => {
     .then((data) => {
       return data.json();
     })
-    .then((res) => console.log(res))
+    .then((res) => handleResponse(res))
     .catch((error) => console.log(error));
 };
 
