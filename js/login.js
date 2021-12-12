@@ -25,7 +25,7 @@ loginForm.addEventListener('submit', () => {
     if(res.message === 'Bad email or password') {
       alert('Falscher Benutzername oder Passwort.');
     } else {
-      //setTimeout(window.location.href = 'karte.html',500)
+      setTimeout(window.location.href = 'karte.html',500)
     }
   }
 
