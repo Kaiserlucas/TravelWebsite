@@ -53,7 +53,7 @@ const displayData = async () => {
 
     const formDelete = document.createElement('form');
     formDelete.setAttribute('action', 'reisen.html');
-    formEdit.setAttribute('onsubmit','return false;')
+    formDelete.setAttribute('onsubmit','return false;')
 
     const buttonEdit = document.createElement('button');
     buttonEdit.setAttribute('type', 'submit');
