@@ -3,6 +3,9 @@ import { getTrips, getJson } from './api.js';
 const visitedCountries = async () => {
 
   const countriePromises = await getTrips();
+  if(countriePromises.message === 'You need to be logged in to see this page.') {
+    window.location.href = 'login.html';
+  }
   const countries = [];
   for (const [i, trip] of countriePromises.entries()) {
     countries[i] = trip.destination;

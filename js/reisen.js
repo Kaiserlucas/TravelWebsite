@@ -17,7 +17,9 @@ const displayData = async () => {
   const yourTrips = document.querySelector('.yourtrips');
   const trips = await getTrips();
 
-  console.log(trips);
+  if(trips.message === 'You need to be logged in to see this page.') {
+    window.location.href = 'login.html';
+  }
 
   //Clear all existing trips
   while (yourTrips.firstChild) {
