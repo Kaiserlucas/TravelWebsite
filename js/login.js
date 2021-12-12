@@ -22,10 +22,11 @@ loginForm.addEventListener('submit', () => {
   };
   fetch('https://webdevelopment-travelsite.herokuapp.com/login', fetchParams)
     .then((data) => {
+      window.location.href = 'karte.html';
       return data.json();
     })
     .then((res) => console.log(res))
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error));alert('Falscher Benutzername oder Password.');
 
   /*if (email.value === wantedEmail && password.value === wantedPassword) {
     window.location.href = 'karte.html';
