@@ -23,10 +23,8 @@ const displayData = async () => {
   }
 
   //Add new trips to page
-  console.log(trips);
-  console.log(JSON.parse(trips));
-
   trips.forEach((trip) => {
+    console.log(trip);
     const div = document.createElement('div');
     div.className = 'trip';
     div.id = trip.id;
