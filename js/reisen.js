@@ -202,6 +202,10 @@ function init() {
       start.value,
       end.value
     );
+    name.value="";
+    destination.value="";
+    start.value="";
+    end.value="";
     saveTrip(trip).then(() => {
       setTimeout(displayData,500)
       setTimeout(displayData,2000)
