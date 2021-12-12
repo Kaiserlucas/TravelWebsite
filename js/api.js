@@ -6,9 +6,9 @@ async function getJson(url) {
 
 function handleResponse(res) {
   if(res.message === 'Bad email or password') {
-    alert('Falscher Benutzername oder Passwort.');
-  } else {
     window.location.href = 'login.html';
+  } else {
+    console.log(res.message)
   }
 }
 
