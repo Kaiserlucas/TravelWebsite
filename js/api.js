@@ -38,7 +38,7 @@ const deleteTrip = async (uuid) => {
       'content-type': 'application/json',
     },
     body: uuid,
-    method: 'POST',
+    method: 'DELETE',
     mode: 'cors',
     credentials: 'include',
   };
