@@ -5,7 +5,7 @@ async function getJson(url) {
 }
 
 function handleResponse(res) {
-  if(res.message === 'Bad email or password') {
+  if(res.message === 'You need to be logged in to see this page.') {
     window.location.href = 'login.html';
   } else {
     console.log(res.message)
