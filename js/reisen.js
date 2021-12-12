@@ -127,6 +127,7 @@ const displayData = async () => {
     destinationInput.setAttribute('required', 'required');
     startdateInput.setAttribute('required', 'required');
     enddateInput.setAttribute('required', 'required');
+    editForm.setAttribute('onsubmit','return false;');
 
     tripnameInput.className = 'trip-element nameInput';
     destinationInput.className = 'trip-element destinationInput';
@@ -134,6 +135,7 @@ const displayData = async () => {
     enddateInput.className = 'trip-element enddateInput';
     submitButton.className = 'trip-element submitButton';
     cancelButton.className = 'trip-element cancelButton';
+
 
     //Get previous values
     tripnameInput.value = parent.querySelector('.name').innerText;
