@@ -15,7 +15,7 @@ function handleResponse(res) {
 const getTrips = async () => {
   const response = await fetch(
     'https://webdevelopment-travelsite.herokuapp.com/trips',{credentials: 'include'}
-  ).then((res)=>handleResponse(res));
+  )
   return await response.json();
 };
 
