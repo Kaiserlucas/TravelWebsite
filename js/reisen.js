@@ -184,7 +184,7 @@ const displayData = async () => {
 
 function init() {
   const createButton = document.querySelector('#createform');
-  createButton.addEventListener('click', () => {
+  createButton.addEventListener('submit', () => {
     const name = document.querySelector('#travelname');
     const destination = document.querySelector('#destination');
     const start = document.querySelector('#startdate');
