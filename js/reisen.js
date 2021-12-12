@@ -27,11 +27,11 @@ const displayData = async () => {
     console.log(trip);
     const div = document.createElement('div');
     div.className = 'trip';
-    div.id = trip.id;
+    div.id = trip.uuid;
     yourTrips.appendChild(div);
 
     const name = document.createElement('h3');
-    name.innerText = trip.tripName;
+    name.innerText = trip.name;
     name.className = 'trip-element name';
     div.appendChild(name);
 
@@ -41,7 +41,7 @@ const displayData = async () => {
     div.appendChild(destination);
 
     const date = document.createElement('p');
-    date.innerText = trip.start + ' - ' + trip.end;
+    date.innerText = trip.startdate + ' - ' + trip.enddate;
     console.log();
     date.className = 'trip-element date';
     div.appendChild(date);
