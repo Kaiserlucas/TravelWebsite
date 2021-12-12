@@ -17,6 +17,8 @@ const displayData = async () => {
   const yourTrips = document.querySelector('.yourtrips');
   const trips = await getTrips();
 
+  console.log(trips);
+
   //Clear all existing trips
   while (yourTrips.firstChild) {
     yourTrips.removeChild(yourTrips.lastChild);
