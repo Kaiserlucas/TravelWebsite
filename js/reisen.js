@@ -178,7 +178,7 @@ const displayData = async () => {
       editTrip(
         new Trip(id, editedName, editedDestination, editedStart, editedEnd)
       ).then(() => {
-        setTimeout(displayData,500)
+        displayData();
         setTimeout(displayData,2000)
       });
     });
