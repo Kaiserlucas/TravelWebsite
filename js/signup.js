@@ -27,9 +27,8 @@ loginForm.addEventListener('submit', () => {
 
     function changePageContentAfterSignup() {
         const div = document.querySelector('#div');
-        email.remove()
-        password.remove()
-        retypePassword.remove()
+        const form = document.querySelector('#loginForm');
+        form.remove()
 
         const header = document.createElement('h3');
         header.innerText = 'Registrierung abgeschickt.';
