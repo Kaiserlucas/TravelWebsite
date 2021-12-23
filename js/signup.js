@@ -19,7 +19,7 @@ loginForm.addEventListener('submit', () => {
 
     function handleResponse(res) {
         if(res.message === 'Bad email or password') {
-            alert('Serverseitiger Fehler. Bitte versuchen Sie es erneut.');
+            alert('Das Passwort muss mindestens 7 Zeichen lang sein.');
         } else {
             changePageContentAfterSignup()
         }
@@ -44,7 +44,6 @@ loginForm.addEventListener('submit', () => {
         div.appendChild(link);
     }
 
-    /*
     fetch('https://webdevelopment-travelsite.herokuapp.com/signup', fetchParams)
         .then((data) => {
             return data.json();
@@ -53,8 +52,6 @@ loginForm.addEventListener('submit', () => {
             handleResponse(res))
         .catch((error) =>
             console.log(error))
-     */
-        changePageContentAfterSignup()
 
     } else {
         alert('Passwörter sind nicht gleich.');
