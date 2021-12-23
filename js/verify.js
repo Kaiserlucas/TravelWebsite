@@ -1,8 +1,9 @@
-const loginForm = document.querySelector('#loginForm');
-const password = document.querySelector('#password');
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const id = urlParams.get('id')
 
-loginForm.addEventListener('submit', () => {
-    const verificationID = { verificationID: password.value };
+if(id) {
+    const verificationID = { verificationID: id };
     const json = JSON.stringify(verificationID);
     const fetchParams = {
         headers: {
@@ -16,9 +17,11 @@ loginForm.addEventListener('submit', () => {
 
     function handleResponse(res) {
         if(res.message === 'Bad email or password') {
-            alert('Falscher Benutzername oder Passwort.');
+            alert('Fehler. Verifikation konnte nicht durchgeführt werden.');
+            document.querySelector('#div').remove();
+            window.location.href = 'login.html'
         } else {
-            setTimeout(window.location.href = 'karte.html',500)
+            //alert('20. Critical Success!');
         }
     }
 
@@ -30,4 +33,8 @@ loginForm.addEventListener('submit', () => {
             handleResponse(res))
         .catch((error) =>
             console.log(error))
-});
+} else {
+    alert('ID Parameter fehlt.');
+    document.querySelector('#div').remove();
+    window.location.href = 'login.html'
+}
