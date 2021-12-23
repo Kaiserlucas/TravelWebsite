@@ -17,8 +17,8 @@ if(id) {
 
     function handleResponse(res) {
         if(res.message === 'Bad email or password') {
-            alert('Fehler. Verifikation konnte nicht durchgeführt werden.');
             document.querySelector('#div').remove();
+            alert('Fehler. Verifikation konnte nicht durchgeführt werden.');
             window.location.href = 'login.html'
         } else {
             //alert('20. Critical Success!');
@@ -34,7 +34,7 @@ if(id) {
         .catch((error) =>
             console.log(error))
 } else {
-    alert('ID Parameter fehlt.');
     document.querySelector('#div').remove();
+    alert('ID Parameter fehlt.');
     window.location.href = 'login.html'
 }
