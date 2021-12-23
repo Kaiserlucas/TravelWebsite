@@ -20,6 +20,8 @@ loginForm.addEventListener('submit', () => {
     function handleResponse(res) {
         if(res.message === 'Bad email or password') {
             alert('Das Passwort muss mindestens 7 Zeichen lang sein.');
+        } else if(res.message === "User already registered") {
+            alert('Dieser Nutzer ist bereits registriert.');
         } else {
             changePageContentAfterSignup()
         }
