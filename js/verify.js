@@ -16,7 +16,7 @@ if(id) {
     };
 
     function handleResponse(res) {
-        if(res.message === 'Bad email or password') {
+        if(res.message === 'Bad verificationID') {
             document.querySelector('#div').remove();
             alert('Fehler. Verifikation konnte nicht durchgeführt werden.');
             window.location.href = 'login.html'
