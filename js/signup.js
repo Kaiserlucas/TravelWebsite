@@ -34,16 +34,31 @@ loginForm.addEventListener('submit', () => {
 
         const header = document.createElement('h3');
         header.innerText = 'Registrierung abgeschickt.';
+        header.classList.add('element');
         div.appendChild(header);
 
         const text = document.createElement('p');
         text.innerText = 'Bitte bestätigen Sie Ihr Konto indem sie dem Link in der soeben versendeten Bestätigungsemail folgen.';
+        text.classList.add('element');
         div.appendChild(text);
 
+        /*
         const link = document.createElement('a');
         link.innerText = 'Zurück zum Login';
+        link.classList.add('element');
         link.setAttribute('href','login.html')
         div.appendChild(link);
+         */
+
+        const linkForm = document.createElement('form');
+        linkForm.setAttribute('action','login.html')
+
+        const button = document.createElement('input');
+        button.setAttribute('type','submit');
+        button.value = "Zurück zum Login"
+
+        linkForm.appendChild(button);
+        div.appendChild(linkForm);
     }
 
     fetch('https://webdevelopment-travelsite.herokuapp.com/signup', fetchParams)
