@@ -49,6 +49,12 @@ osm.addTo(map);
 function click(e) {
   const country = e.target;
   console.log(country);
+  console.log(1);
+  console.log(country.feature.properties.ADMIN);
+  console.log(2);
+  console.log(country.properties.ADMIN);
+  console.log(3);
+  console.log(country.ADMIN);
 }
 
 function onEachFeature(feature, layer) {
