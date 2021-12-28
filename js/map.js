@@ -1,5 +1,8 @@
 import { getTrips, getJson } from './api.js';
 
+const popupForm = document.getElementById("popupForm");
+const destination = document.getElementById("destination");
+
 const visitedCountries = async () => {
 
   const countriePromises = await getTrips();
@@ -49,6 +52,8 @@ osm.addTo(map);
 function click(e) {
   const country = e.target.feature.properties.ADMIN;
   console.log(country);
+  popupForm.style.display = "block";
+  destination.value = country;
 }
 
 function onEachFeature(feature, layer) {

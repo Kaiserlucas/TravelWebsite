@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="css/karte.css" />
+    <link rel="stylesheet" href="css/popup.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700"
@@ -37,6 +38,39 @@
         </li>
       </ul>
     </div>
+
+    <!-- Popup Form -->
+    <div class="createPopup">
+      <div class="formPopup" id="popupForm">
+        <form action="#" class="formContainer" onsubmit="return false;">
+          <h2 id="popupHeader">Reise anlegen</h2>
+          <label for="name">
+            <strong>Name</strong>
+          </label>
+          <input type="text" id="name" placeholder="" name="name" required>
+          <label for="destination">
+            <strong>Ziel</strong>
+          </label>
+          <input type="text" id="destination" placeholder="" name="destination" required>
+          <label for="startdate">
+            <strong>Startdatum</strong>
+          </label>
+          <input type="date" id="startdate" name="startdate" required />
+          <label for="enddate">
+            <strong>Enddatum</strong>
+          </label>
+          <input type="date" id="enddate" name="enddate" required />
+          <button type="submit" class="btn"><strong>Speichern</strong></button>
+          <button type="button" class="btn cancel" onclick="closeForm()"><strong>Abbrechen</strong></button>
+        </form>
+      </div>
+    </div>
+      <script>
+        function closeForm() {
+          document.getElementById("popupForm").style.display = "none";
+        }
+      </script>
+
     <!-- Map -->
     <div id="map"></div>
     <script
