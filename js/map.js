@@ -6,7 +6,7 @@ const name = document.getElementById("name");
 const destination = document.getElementById("destination");
 const startdate = document.getElementById("startdate");
 const enddate = document.getElementById("enddate");
-const saveButton = document.getElementById("saveButton");
+const saveForm = document.getElementById("saveForm");
 
 const init = async () => {
   const visitedCountries = async () => {
@@ -74,7 +74,7 @@ function onEachFeature(feature, layer) {
   });
 }
 
-saveButton.addEventListener('submit', () => {
+saveForm.addEventListener('submit', () => {
   console.log("click");
   const trip = new Trip(
       1,
