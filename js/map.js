@@ -58,6 +58,6 @@ function click(e) {
 
 function onEachFeature(feature, layer) {
   layer.on({
-    mouseover: click,
+    click: click,
   });
 }
