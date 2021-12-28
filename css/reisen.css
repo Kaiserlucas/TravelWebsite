@@ -38,9 +38,9 @@ body {
 }
 
 .nav-item:last-child button,
-input[type="submit"] {
+input[type='submit'] {
   font-family: Montserrat, sans-serif;
-  font-size: 1rem;
+  font-size: 1.3rem;
   background: #f9b75d;
   border: none;
   border-radius: 0.2rem;
@@ -50,43 +50,56 @@ input[type="submit"] {
 }
 
 .nav-item:last-child button:hover,
-input[type="submit"]:hover {
+input[type='submit']:hover {
   background: #f99853;
 }
+#createform{
+      display: flex;
+    padding: 60px;
+    justify-content: space-between;
+}
 .createtrip {
-  display: flex;
+  
   background-color: #f2f2f2;
   padding: 20px;
-  justify-content: center;
-  background-image: url("../resources/wolkenundso.jpg");
+  background-image: url('../resources/wolkenundso.jpg');
   background-repeat: no-repeat;
-
+  background-size: cover;
+  font-size: 1.6rem;
 }
-.createtrip input {
+.createtrip label{
+  font-size: 1rem;
+}
+.createtrip input,
+select {
   display: flex;
   flex-direction: column;
 }
 
-.createtrip input[type="submit"] {
+.createtrip input[type='submit'] {
   align-self: center;
+  margin-left: 20px;
 }
 
-input[type="text"],
-input[type="date"] {
+input[type='text'],
+input[type='date'],
+#destination {
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin: 8px 0;
 }
 
-input[type="text"] {
-  padding: 10px 20px;
+input[type='text'] {
+  padding: 10px 55px;
+}
+#destination {
+  padding: 10px 0px;
 }
 
-input[type="date"] {
-  padding: 0 58px;
+.createtrip input[type='date'] {
+  padding: 0 93px;
 }
 
-input[type="submit"]:hover {
+input[type='submit']:hover {
   background-color: #f99853;
 }
 
@@ -94,28 +107,29 @@ input[type="submit"]:hover {
   text-align: center;
   margin-top: 50px;
   display: flex;
- 
 }
-.traveltext{
+.traveltext {
   text-align: center;
-  margin-top: 30px;
+  padding-top: 30px;
+  font-size: 3rem;
+  color: #FFF;
+  font-family: 'Trocchi', serif;
 }
 
 .trip {
+  font-family: 'Trocchi', serif;
   position: relative;
   display: flex;
   justify-content: center;
   align-content: space-between;
   flex-direction: column;
-  background-color:lightsteelblue;
+  background-color:#f9b75d;
   width: 300px;
-  height:auto;
+  height: auto;
   padding-bottom: 10px;
   border-radius: 25px;
   margin: 30px auto 30px;
 }
-
-
 
 .trip-element {
   overflow-wrap: break-word;
@@ -131,29 +145,32 @@ input[type="submit"]:hover {
   padding: 3px;
 }
 
-
 .deleteButton {
   border: 1px solid grey;
   border-radius: 10px;
   padding: 3px;
 }
 
-
 .editButton:hover {
-  background-color:#f9b75d;
+  background-color: #f9b75d;
 }
-
 
 .deleteButton:hover {
   background-color: #f9b75d;
 }
-
-@media (max-width: 950px) {
+.ballon{
+  background-image: url("../resources/ballon3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 370px);
+  font-size: 1.6rem;
   
-  .nav-item:first-child img{
-    margin-left: -30px;
+}
+@media (max-width: 950px) {
+  .nav-item:first-child img {
+    margin-left: 0;
   }
-  .yourtrips{
+  .yourtrips {
     flex-direction: column;
   }
 }
