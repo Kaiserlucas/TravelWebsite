@@ -1,7 +1,10 @@
 import { getTrips, getJson } from './api.js';
 
 const popupForm = document.getElementById("popupForm");
+const name = document.getElementById("name");
 const destination = document.getElementById("destination");
+const startdate = document.getElementById("startdate");
+const enddate = document.getElementById("enddate");
 
 const visitedCountries = async () => {
 
@@ -53,7 +56,12 @@ function click(e) {
   const country = e.target.feature.properties.ADMIN;
   console.log(country);
   popupForm.style.display = "block";
+
+  name.value = ""
   destination.value = country;
+  destination.disabled = true;
+  startdate.value = "";
+  enddate.value = "";
 }
 
 function onEachFeature(feature, layer) {
