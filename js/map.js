@@ -75,6 +75,7 @@ function onEachFeature(feature, layer) {
 }
 
 saveButton.addEventListener('submit', () => {
+  console.log("click");
   const trip = new Trip(
       1,
       name.value,
@@ -82,6 +83,7 @@ saveButton.addEventListener('submit', () => {
       startdate.value,
       enddate.value
   );
+  console.log(trip)
   saveTrip(trip).then(() => {
     setTimeout(init,2000)
   });
