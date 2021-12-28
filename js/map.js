@@ -51,6 +51,7 @@ osm.addTo(map);
 
 function click(e) {
   const country = e.target.feature.properties.ADMIN;
+  map.style.zIndex= 1 ;
   console.log(country);
   popupForm.style.display = "block";
   destination.value = country;
