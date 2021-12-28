@@ -47,14 +47,8 @@ let osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 osm.addTo(map);
 
 function click(e) {
-  const country = e.target;
+  const country = e.target.feature.properties.ADMIN;
   console.log(country);
-  console.log(1);
-  console.log(country.feature.properties.ADMIN);
-  console.log(2);
-  console.log(country.properties.ADMIN);
-  console.log(3);
-  console.log(country.ADMIN);
 }
 
 function onEachFeature(feature, layer) {
