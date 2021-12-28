@@ -8,6 +8,8 @@ const startdate = document.getElementById("startdate");
 const enddate = document.getElementById("enddate");
 const saveForm = document.getElementById("saveForm");
 
+let currentCountry;
+
 const init = async () => {
   const visitedCountries = async () => {
 
@@ -57,6 +59,7 @@ const init = async () => {
 }
 
 function click(e) {
+  currentCountry = e;
   const country = e.target.feature.properties.ADMIN;
   console.log(country);
   popupForm.style.display = "block";
@@ -75,7 +78,7 @@ function onEachFeature(feature, layer) {
 }
 
 saveForm.addEventListener('submit', () => {
-  console.log("click");
+  popupForm.style.display = "none";
   const trip = new Trip(
       1,
       name.value,
@@ -83,9 +86,9 @@ saveForm.addEventListener('submit', () => {
       startdate.value,
       enddate.value
   );
-  console.log(trip)
+  currentCountry.fill = false;
   saveTrip(trip).then(() => {
-    setTimeout(init,2000)
+    console.log("done")
   });
 });
 
