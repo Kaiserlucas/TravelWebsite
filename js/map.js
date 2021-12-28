@@ -8,8 +8,6 @@ const startdate = document.getElementById("startdate");
 const enddate = document.getElementById("enddate");
 const saveForm = document.getElementById("saveForm");
 
-let currentCountry;
-
 const init = async () => {
   const visitedCountries = async () => {
 
@@ -59,7 +57,6 @@ const init = async () => {
 }
 
 function click(e) {
-  currentCountry = e;
   const country = e.target.feature.properties.ADMIN;
   console.log(country);
   popupForm.style.display = "block";
@@ -86,9 +83,8 @@ saveForm.addEventListener('submit', () => {
       startdate.value,
       enddate.value
   );
-  currentCountry.fill = false;
   saveTrip(trip).then(() => {
-    console.log("done")
+    setTimeout(window.location.href = 'karte.html',1000)
   });
 });
 
