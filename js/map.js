@@ -1,5 +1,5 @@
 import {getTrips, getJson, saveTrip} from './api.js';
-import Trip from "./Trip";
+import Trip from "./Trip.js";
 
 const popupForm = document.getElementById("popupForm");
 const name = document.getElementById("name");
