@@ -23,6 +23,7 @@ L.geoJSON(data, {
   fill: true,
   fillColor: '#B0B0B0',
   fillOpacity: 1,
+  onEachFeature: onEachFeature,
   style: function (feature) {
     for (const country of countries) {
       switch (feature.properties.ADMIN) {
@@ -44,3 +45,14 @@ let osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   noWrap: true,
 });
 osm.addTo(map);
+
+function click(e) {
+  const country = e.target;
+  console.log(country);
+}
+
+function onEachFeature(feature, layer) {
+  layer.on({
+    mouseover: click,
+  });
+}
