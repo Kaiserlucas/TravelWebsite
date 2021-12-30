@@ -12,7 +12,8 @@ body {
   overflow: hidden;
 }
 
-input[type='submit'] {
+input[type='submit'],
+button {
   font-family: Montserrat, sans-serif;
   font-size: 1rem;
   background: #f9b75d;
