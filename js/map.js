@@ -84,7 +84,7 @@ saveForm.addEventListener('submit', () => {
       enddate.value
   );
   saveTrip(trip).then(() => {
-    setTimeout(window.location.href = 'karte.html',2000)
+    setTimeout(window.location.href = 'karte.html',3000)
   });
 });
 
