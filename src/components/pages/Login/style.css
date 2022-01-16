@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.3rem;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  background-image: url('../../../ressources/wolkenundso.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+input[type='submit'] {
+  font-family: Montserrat, sans-serif;
+  font-size: 1rem;
+  background: #f9b75d;
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+input[type='submit']:hover {
+  background: #f99853;
+}
+.logintext {
+  text-align: center;
+  margin-top: 20px;
+  
+}
+.login {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+
+.element {
+  margin-top: 30px;
+  display: block;
+}
+
+input[type='email'],
+input[type='password'] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 8px 0;
+  padding: 20px 40px;
+}
+
+input[type='submit']:hover {
+  background-color: #f99853;
+}
+
+@media (max-width: 950px) {
+  body{
+    background-size: 160vh;
+  }
+ 
+}

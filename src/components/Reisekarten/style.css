@@ -1,0 +1,63 @@
+.yourtrips {
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+}
+.traveltext {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 3rem;
+  color: #FFF;
+  font-family: 'Trocchi', serif;
+}
+
+.trip {
+  font-family: 'Trocchi', serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  flex-direction: column;
+  background-color:#f9b75d;
+  width: 300px;
+  height: auto;
+  padding-bottom: 10px;
+  border-radius: 25px;
+  margin: 30px auto 30px;
+}
+
+.trip-element {
+  overflow-wrap: break-word;
+  margin-top: 10px;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.editButton {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.deleteButton {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.editButton:hover {
+  background-color: #f9b75d;
+}
+
+.deleteButton:hover {
+  background-color: #f9b75d;
+}
+.ballon{
+  background-image: url("../../ressources/ballon3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 370px);
+  font-size: 1.6rem;
+  
+}
