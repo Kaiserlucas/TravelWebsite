@@ -1,5 +1,0 @@
-- Länderflagge hinter ihre Reisen
-- Animation des Logos(Erde) bei Hover 
-- Date inputs Felder sollten die gleichen Maße haben wie die Text inputs
-- Hellerer Hover der orangenen Buttons
-- 
