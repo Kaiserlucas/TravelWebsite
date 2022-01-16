@@ -32,6 +32,7 @@ export default function Karte() {
   };
 
   const wrapperFunction = async () => {
+    const L = ""
       const data = await getJson('../../ressources/countries.geojson');
       const map = L.map('map').setView([0, 0], 3);
     const countries = await visitedCountries();

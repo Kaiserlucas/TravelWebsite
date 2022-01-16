@@ -1,8 +1,6 @@
 import React from 'react';
-import Reisekarte from '../Reisekarte/Reisekarte';
 import './style.css'
 
-import { useState } from 'react';
 
 export default function Reisekarten({ reisekarten }) {
   return (

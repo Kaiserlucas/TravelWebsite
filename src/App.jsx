@@ -4,7 +4,6 @@ import Karte from './components/pages/Karte/Karte';
 import Reisen from './components/pages/Reisen/reisen';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navigate } from 'react-router';
-import { useEffect } from 'react';
 
 function App() {
   
