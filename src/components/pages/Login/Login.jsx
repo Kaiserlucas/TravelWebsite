@@ -4,16 +4,13 @@ import './style.css'
 
 
 export default function Login() { 
-  function handleSubmit() {
-    return false;
-  }
-
-  useEffect(() => {
+  function handleSubmit(event) {
     const loginForm = document.querySelector('#loginForm');
     const email = document.querySelector('#email');
     const password = document.querySelector('#password');
 
-    loginForm.addEventListener('submit', () => {
+    event.preventDefault();
+    console.log("Submitted");
       const loginInformation = { email: email.value, password: password.value };
       const json = JSON.stringify(loginInformation);
       const fetchParams = {
@@ -27,7 +24,7 @@ export default function Login() {
       };
 
       function handleResponse(res) {
-        console.log("Handle response");
+        console.log('Handle response');
         if (res.message === 'Bad email or password') {
           alert('Falscher Benutzername oder Passwort.');
         } else {
@@ -35,8 +32,8 @@ export default function Login() {
           setTimeout((window.location.href = '/karte'), 500);
         }
       }
-      
-      console.log("Starting to fetch");
+
+      console.log('Starting to fetch');
       fetch(
         'https://webdevelopment-travelsite.herokuapp.com/login',
         fetchParams
@@ -47,10 +44,10 @@ export default function Login() {
         })
         .then((res) => handleResponse(res))
         .catch((error) => console.log(error));
-    });
-    },
-  [])
-  
+     }
+
+
+    
 
     return (
       <div className="login">
