@@ -1,10 +1,58 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './style.css'
 
+
+
 export default function Login() { 
+  function handleSubmit() {
+    return false;
+  }
+
+  useEffect(() => {
+    const loginForm = document.querySelector('#loginForm');
+    const email = document.querySelector('#email');
+    const password = document.querySelector('#password');
+
+    loginForm.addEventListener('submit', () => {
+      const loginInformation = { email: email.value, password: password.value };
+      const json = JSON.stringify(loginInformation);
+      const fetchParams = {
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: json,
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+      };
+
+      function handleResponse(res) {
+        if (res.message === 'Bad email or password') {
+          alert('Falscher Benutzername oder Passwort.');
+        } else {
+          //setTimeout((window.location.href = '/karte'), 500);
+          setTimeout((window.location.href = '/karte'), 500);
+        }
+      }
+      
+
+      fetch(
+        'https://webdevelopment-travelsite.herokuapp.com/login',
+        fetchParams
+      )
+        .then((data) => {
+          return data.json();
+        })
+        .then((res) => handleResponse(res))
+        .catch((error) => console.log(error));
+    });
+    },
+  [])
+  
+
     return (
       <div className="login">
-        <form action="#" id="loginForm" onSubmit="return false;">
+        <form action="#" id="loginForm" onSubmit={handleSubmit}>
           <label htmlFor="email">E-Mail Adresse</label>
           <br />
           <input type="email" id="email" name="email" required />
@@ -16,7 +64,7 @@ export default function Login() {
           <br />
           <input type="submit" value="Login" />
         </form>
-        <h2 id="error"></h2>
+        <h2 id="error" aria-label="heading"></h2>
       </div>
     );
 }
