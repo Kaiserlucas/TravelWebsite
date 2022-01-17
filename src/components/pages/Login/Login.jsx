@@ -27,6 +27,7 @@ export default function Login() {
       };
 
       function handleResponse(res) {
+        console.log("Handle response");
         if (res.message === 'Bad email or password') {
           alert('Falscher Benutzername oder Passwort.');
         } else {
@@ -35,12 +36,13 @@ export default function Login() {
         }
       }
       
-
+      console.log("Starting to fetch");
       fetch(
         'https://webdevelopment-travelsite.herokuapp.com/login',
         fetchParams
       )
         .then((data) => {
+          console.log('Fetching');
           return data.json();
         })
         .then((res) => handleResponse(res))
