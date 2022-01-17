@@ -11,9 +11,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="login" element={<Login />} />
-          <Route path="karte" element={<Karte />} />
-          <Route path="reisen" element={<Reisen />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/karte" element={<Karte />} />
+          <Route path="/reisen" element={<Reisen />} />
           <Route path="/" element={<Navigate to={'/login'} />} />
         </Routes>
       </BrowserRouter>
