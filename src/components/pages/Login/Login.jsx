@@ -1,11 +1,11 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import './style.css'
 
 
 
-export default function Login() { 
+export default function Login({probs}) { 
   function handleSubmit(event) {
-    const loginForm = document.querySelector('#loginForm');
+   // const loginForm = document.querySelector('#loginForm');
     const email = document.querySelector('#email');
     const password = document.querySelector('#password');
 
@@ -29,7 +29,7 @@ export default function Login() {
           alert('Falscher Benutzername oder Passwort.');
         } else {
           //setTimeout((window.location.href = '/karte'), 500);
-          setTimeout((window.location.href = '/karte'), 500);
+          setTimeout((probs.history.push("/karte")), 500);
         }
       }
 
