@@ -1,9 +1,12 @@
 import React from 'react'
 import './style.css'
+import { useNavigate } from 'react-router';
 
 
 
 export default function Login({probs}) { 
+      const navigate = useNavigate();
+
   function handleSubmit(event) {
    // const loginForm = document.querySelector('#loginForm');
     const email = document.querySelector('#email');
@@ -29,7 +32,11 @@ export default function Login({probs}) {
           alert('Falscher Benutzername oder Passwort.');
         } else {
           //setTimeout((window.location.href = '/karte'), 500);
-          setTimeout((probs.history.push("/karte")), 500);
+          setTimeout(
+            navigate('/karte'),
+
+            500
+          );
         }
       }
 
