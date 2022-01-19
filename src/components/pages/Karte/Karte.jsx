@@ -9,9 +9,9 @@ export default  function Karte() {
   
 
     return (
-      <div>
+      <>
         <Navbar />
         <Weltkarte/>
-      </div>
+      </>
     );
 }

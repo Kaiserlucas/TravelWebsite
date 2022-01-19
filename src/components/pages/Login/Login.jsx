@@ -53,9 +53,6 @@ export default function Login({probs}) {
         .catch((error) => console.log(error));
      }
 
-
-    
-
     return (
       <div className="login">
         <form action="#" id="loginForm" onSubmit={handleSubmit}>
