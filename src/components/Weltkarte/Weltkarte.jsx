@@ -5,7 +5,42 @@ import { getTrips, getJson } from '../../utils/api';
 import { useEffect } from 'react';
 
 export default function Karte() {
-console.log();
+  const visCountries = null;
+  const [jsonData,setJsonData] = useState();
+  const [countries, setCountries] = useState();
+  useEffect(()=> {
+    async function wrapper(){
+      const data = await getJson(
+        'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_50m_admin_0_countries.geojson'
+      );
+      setJsonData(data)
+    }
+    const visitedCountries = async () => {
+      const countriePromises = await getTrips();
+      if (
+        countriePromises.message ===
+        'You need to be logged in to see this page.'
+      ) {
+        window.location.href = 'login.html';
+      }
+      const countries = [];
+      for (const [i, trip] of countriePromises.entries()) {
+        countries[i] = trip.destination;
+      }
+      return countries;
+    };
+    async function wrapper2(){
+    visCountries = await visitedCountries();
+    }
+  
+    wrapper();
+    wrapper2();
+   
+
+ 
+  })
+  console.log(jsonData);
+  console.log(visCountries);
   return (
     <MapContainer center={[51.505, -0.09]} zoom={3} scrollWheelZoom={false}>
       <TileLayer
@@ -13,9 +48,9 @@ console.log();
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <GeoJSON
-        data={JSONResult}
+        data={jsonData}
         style={(feature) => {
-          for (const country of JSONResult) {
+          for (const country of visCountries) {
             switch (feature.properties.ADMIN) {
               case country:
                 return {
