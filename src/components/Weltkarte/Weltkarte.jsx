@@ -34,9 +34,9 @@ export default function Karte() {
     wrapper2();
   }, []);
 
-  function besuchteLänder(jsonliste) {
+  function besuchteLänder() {
     for (const country of countries) {
-      switch (jsonliste.properties.ADMIN) {
+      switch (worldmap.properties.ADMIN) {
         case country:
           return 'black';
         default:
@@ -54,7 +54,7 @@ export default function Karte() {
             weight: 1,
             color: 'gray',
             fill: true,
-            fillColor: besuchteLänder(worldmap.features),
+            fillColor: besuchteLänder(),
             fillOpacity: 1,
           })}
         />
