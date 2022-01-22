@@ -9,12 +9,15 @@ export default function Karte() {
   const [countries, setCountries] = useState([]);
   useEffect(() => {
     async function wrapper() {
+      console.log("Json wird gefetched");
       const data = await getJson(
         'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_50m_admin_0_countries.geojson'
       );
       setJsonData(data);
     }
     const visitedCountries = async () => {
+            console.log('Trips werden gefetcht');
+
       const countriePromises = await getTrips();
       if (
         countriePromises.message ===
@@ -30,6 +33,7 @@ export default function Karte() {
     };
 
     async function wrapper2() {
+       console.log('Visited countries werden gefetched');
       const temp = await visitedCountries();
       setCountries(temp);
     }
