@@ -6,18 +6,18 @@ export default function Navbar() {
       <div className="navbar">
         <ul className="navlist">
           <li className="nav-item">
-            <a href="karte.html">
+            <a href="karte">
               <img id="logo" src="../../ressources/logo.png" alt="logo" />
             </a>
           </li>
           <li className="nav-item">
-            <a href="karte.html">Startseite</a>
+            <a href="karte">Startseite</a>
           </li>
           <li className="nav-item">
-            <a href="reisen.html">Reisen</a>
+            <a href="reisen">Reisen</a>
           </li>
           <li className="nav-item">
-            <form action="login.html">
+            <form action="login">
               <button>Logout</button>
             </form>
           </li>
