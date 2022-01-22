@@ -50,13 +50,13 @@ export default function Karte() {
       <MapContainer className="map" center={[0, 0]} zoom={3}>
         <GeoJSON
           data={worldmap.features}
-          style={{
+          style={ (current) =>({
             weight: 1,
             color: 'gray',
             fill: true,
-            fillColor: besuchteLänder(),
+            fillColor: besuchteLänder(current),
             fillOpacity: 1,
-          }}
+          })}
         />
       </MapContainer>
     </div>
