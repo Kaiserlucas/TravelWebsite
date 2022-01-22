@@ -35,6 +35,9 @@ export default function Karte() {
   }, []);
 
   function besuchteLänder() {
+    for (let i = 0; i < worldmap.features.length; i++) {
+      console.log(worldmap.features[i].properties.ADMIN);
+    }
     
       for (const country of countries) {
         for (let i = 0; i < worldmap.features.length; i++) {
