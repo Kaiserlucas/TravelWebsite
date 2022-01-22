@@ -3,18 +3,12 @@ import React, { useState } from 'react';
 import './style.css';
 import { getTrips, getJson } from '../../utils/api';
 import { useEffect } from 'react';
+import worldmap from '../../ressources/worldmap.json';
 
 export default function Karte() {
-  const [jsonData, setJsonData] = useState([]);
+  // const [jsonData, setJsonData] = useState([]);
   const [countries, setCountries] = useState([]);
   useEffect(() => {
-    async function wrapper() {
-      console.log('Json wird gefetched');
-      const data = await getJson(
-        'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_50m_admin_0_countries.geojson'
-      );
-      setJsonData(data);
-    }
     const visitedCountries = async () => {
       console.log('Trips werden gefetcht');
 
@@ -37,24 +31,33 @@ export default function Karte() {
       const temp = await visitedCountries();
       setCountries(temp);
     }
-    wrapper();
     wrapper2();
   }, []);
-  console.log(`JSON ${jsonData}`);
-  console.log(`Countries: ${countries}`);
+
+  function besuchteLänder(current) {
+    for (const country of countries) {
+      switch (current.properties.ADMIN) {
+        case country:
+          return "black"
+          default:
+            return "beige"
+      }
+    }
+  }
 
   return (
     <div>
-      <MapContainer
-        className="map"
-        style={{ height: '100vh', width: '100vw' }}
-        center={[0, 0]}
-        zoom={3}
-      >
-          <GeoJSON
-            data={jsonData.features}
-            style={{fill: true, fillColor: '#000',fillOpacity:1 }}
-          />
+      <MapContainer className="map" center={[0, 0]} zoom={3}>
+        <GeoJSON
+          data={worldmap.features}
+          style={{
+            weight: 1,
+            color: 'gray',
+            fill: true,
+            fillColor: besuchteLänder(),
+            fillOpacity: 1,
+          }}
+        />
       </MapContainer>
     </div>
   );
