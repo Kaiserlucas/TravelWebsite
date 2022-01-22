@@ -44,6 +44,7 @@ export default function Karte() {
             case 'Germany':
               return 'purple';
             default:
+              console.log(worldmap.features[i].properties.ADMIN);
               return 'red';
           }
         }
