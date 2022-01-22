@@ -34,13 +34,13 @@ export default function Karte() {
     wrapper2();
   }, []);
 
-  function besuchteLänder(current) {
+  function besuchteLänder(jsonliste) {
     for (const country of countries) {
-      switch (current.properties.ADMIN) {
+      switch (jsonliste.properties.ADMIN) {
         case country:
-          return "black"
-          default:
-            return "beige"
+          return 'black';
+        default:
+          return 'beige';
       }
     }
   }
@@ -54,7 +54,7 @@ export default function Karte() {
             weight: 1,
             color: 'gray',
             fill: true,
-            fillColor: besuchteLänder(current),
+            fillColor: besuchteLänder(worldmap.features),
             fillOpacity: 1,
           })}
         />
