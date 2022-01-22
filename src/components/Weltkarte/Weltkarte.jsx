@@ -41,9 +41,9 @@ export default function Karte() {
           case country:
             return 'black';
           case "Germany":
-              return 'red';
+              return 'purple';
           default:
-            return 'beige';
+            return 'red';
         }
       }
     }
