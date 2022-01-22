@@ -35,17 +35,18 @@ export default function Karte() {
   }, []);
 
   function besuchteLänder() {
-    for (let i = 0; i < worldmap.features.length; i++) {
+    
       for (const country of countries) {
-        switch (worldmap.features[i].properties.ADMIN) {
-          case country:
-            return 'black';
-          case 'Germany':
-            return 'purple';
-          default:
-            return 'red';
+        for (let i = 0; i < worldmap.features.length; i++) {
+          switch (worldmap.features[i].properties.ADMIN) {
+            case country:
+              return 'black';
+            case 'Germany':
+              return 'purple';
+            default:
+              return 'red';
+          }
         }
-      }
     }
   }
   return (
