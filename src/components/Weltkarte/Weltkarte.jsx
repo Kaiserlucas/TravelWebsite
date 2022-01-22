@@ -36,9 +36,6 @@ export default function Karte() {
 
   function besuchteLänder() {
     for (const country of worldmap.features) {
-      console.log(country.properties.ADMIN);
-    }
-    for (const country of worldmap.features) {
       for (const visitedCountry of countries) {
         if (country.properties.ADMIN === visitedCountry) {
           return 'black';
