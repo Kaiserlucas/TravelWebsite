@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, GeoJSON} from 'react-leaflet';
 import React, { useState } from 'react';
 import './style.css';
 import { getTrips, getJson } from '../../utils/api';
@@ -42,14 +42,14 @@ export default function Karte() {
   
   return (
     <div className="mapdata-container">
-      <Map
+      <MapContainer
         className="map"
         style={{ height: '100vh', width: '100vw' }}
         center={[0, 0]}
         zoom={3}
       >
         <GeoJSON data={jsonData} style={{ color: 'purple' }} />
-      </Map>
+      </MapContainer>
     </div>
   );
 }
