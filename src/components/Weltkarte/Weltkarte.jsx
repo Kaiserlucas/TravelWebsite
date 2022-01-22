@@ -42,7 +42,7 @@ export default function Karte() {
       for (const visitedCountry of countries) {
         if (country.properties.ADMIN == visitedCountry) {
           return 'black';
-        } else if (country.properties.ADMIN == 'Germany') {
+        } else if (country.properties.ADMIN == 'Australia') {
           return 'purple';
         } else {
           console.log(country.properties.ADMIN);
