@@ -36,7 +36,9 @@ export default function Karte() {
     wrapper();
     wrapper2();
   },[]);
- 
+ console.log(`JSON ${jsonData}`);
+ console.log(`Countries: ${countries}`);
+
   return (
     <MapContainer center={[51.505, -0.09]} zoom={3} scrollWheelZoom={false}>
       <TileLayer
