@@ -39,30 +39,17 @@ export default function Karte() {
  console.log(`JSON ${jsonData}`);
  console.log(`Countries: ${countries}`);
 
+  
   return (
-    <MapContainer center={[51.505, -0.09]} zoom={3} scrollWheelZoom={true}>
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <GeoJSON
-      key={"geojsonkey"}
-        data={jsonData}
-      /*  style={(feature) => {
-          for (const country of countries) {
-            switch (feature.properties.ADMIN) {
-              case country:
-                return {
-                  fill: false,
-                };
-              case 'Antarctica':
-                return {
-                  fill: false,
-                };
-            }
-          }
-        }*/
-      ></GeoJSON>
-    </MapContainer>
+    <div className="mapdata-container">
+      <Map
+        className="map"
+        style={{ height: '100vh', width: '100vw' }}
+        center={[0, 0]}
+        zoom={3}
+      >
+        <GeoJSON data={jsonData} style={{ color: 'purple' }} />
+      </Map>
+    </div>
   );
 }
