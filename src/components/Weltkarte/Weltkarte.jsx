@@ -47,7 +47,6 @@ export default function Karte() {
   return (
     
     <div className="mapdata-container">
-      <div className='Test'>{JSON.stringify(jsonData)}</div>
       <MapContainer
         className="map"
         style={{ height: '100vh', width: '100vw' }}
