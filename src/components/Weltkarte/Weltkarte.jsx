@@ -40,17 +40,15 @@ export default function Karte() {
         switch (worldmap.features[i].properties.ADMIN) {
           case country:
             return 'black';
-          case "Germany":
-              return 'purple';
+          case 'Germany':
+            return 'purple';
           default:
             return 'red';
         }
       }
     }
   }
-
   return (
-
     <div>
       <MapContainer className="map" center={[0, 0]} zoom={3}>
         <GeoJSON
