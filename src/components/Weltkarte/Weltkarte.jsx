@@ -5,7 +5,6 @@ import { getTrips, getJson } from '../../utils/api';
 import { useEffect } from 'react';
 
 export default function Karte() {
-  const visCountries = null;
   const [jsonData,setJsonData] = useState();
   const [countries, setCountries] = useState();
   useEffect(()=> {
@@ -28,19 +27,11 @@ export default function Karte() {
         countries[i] = trip.destination;
       }
       return countries;
-    };
-    async function wrapper2(){
-    visCountries = await visitedCountries();
-    }
-  
+    };    
     wrapper();
-    wrapper2();
-   
-
- 
+    setCountries(visitedCountries);
   })
-  console.log(jsonData);
-  console.log(visCountries);
+  console.log(jsonData,countries);
   return (
     <MapContainer center={[51.505, -0.09]} zoom={3} scrollWheelZoom={false}>
       <TileLayer
@@ -50,7 +41,7 @@ export default function Karte() {
       <GeoJSON
         data={jsonData}
         style={(feature) => {
-          for (const country of visCountries) {
+          for (const country of countries) {
             switch (feature.properties.ADMIN) {
               case country:
                 return {
