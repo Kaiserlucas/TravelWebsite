@@ -5,14 +5,14 @@ import { getTrips, getJson } from '../../utils/api';
 import { useEffect } from 'react';
 
 export default function Karte() {
-  const [jsonData,setJsonData] = useState();
-  const [countries, setCountries] = useState();
-  useEffect(()=> {
-    async function wrapper(){
+  const [jsonData,setJsonData] = useState([]);
+  const [countries, setCountries] = useState([]);
+  useEffect(() => {
+    async function wrapper() {
       const data = await getJson(
         'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_50m_admin_0_countries.geojson'
       );
-      setJsonData(data)
+      setJsonData(data);
     }
     const visitedCountries = async () => {
       const countriePromises = await getTrips();
@@ -27,11 +27,16 @@ export default function Karte() {
         countries[i] = trip.destination;
       }
       return countries;
-    };    
+    };
+
+    async function wrapper2() {
+      const temp = await visitedCountries();
+      setCountries(temp);
+    }
     wrapper();
-    setCountries(visitedCountries);
-  })
-  console.log(jsonData,countries);
+    wrapper2();
+  },[]);
+ 
   return (
     <MapContainer center={[51.505, -0.09]} zoom={3} scrollWheelZoom={false}>
       <TileLayer
