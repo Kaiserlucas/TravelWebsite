@@ -35,7 +35,7 @@ export default function Karte() {
     }
     wrapper();
     wrapper2();
-  },[]);
+  },[jsonData,countries]);
  console.log(`JSON ${jsonData}`);
  console.log(`Countries: ${countries}`);
 
