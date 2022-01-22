@@ -44,22 +44,17 @@ export default function Karte() {
   console.log(`Countries: ${countries}`);
 
   return (
-    <div className="mapdata-container">
+    <div>
       <MapContainer
         className="map"
         style={{ height: '100vh', width: '100vw' }}
         center={[0, 0]}
         zoom={3}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        >
           <GeoJSON
-            data={jsonData}
+            data={jsonData.features}
             style={{fill: true, fillColor: '#000',fillOpacity:1 }}
           />
-        </TileLayer>
       </MapContainer>
     </div>
   );
