@@ -35,24 +35,20 @@ export default function Karte() {
   }, []);
 
   function besuchteLänder() {
-    for (let i = 0; i < worldmap.features.length; i++) {
-      console.log(worldmap.features[i].properties.ADMIN);
-    }
-    
-      for (const country of countries) {
-        for (let i = 0; i < worldmap.features.length; i++) {
-          switch (worldmap.features[i].properties.ADMIN) {
-            case country:
-              return 'black';
-            case 'Germany':
-              return 'purple';
-            default:
-              console.log(worldmap.features[i].properties.ADMIN);
-              return 'red';
-          }
+    for (const visitedCountry of countries) {
+      for (const country of worldmap.features) {
+        if (country.properties.ADMIN == visitedCountry) {
+          return 'black';
+        } else if (country.properties.ADMIN == 'Germany') {
+          return 'purple';
+        } else {
+          console.log(country.properties.ADMIN);
+          return 'red';
         }
+      }
     }
   }
+
   return (
     <div>
       <MapContainer className="map" center={[0, 0]} zoom={3}>
