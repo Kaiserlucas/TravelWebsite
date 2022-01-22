@@ -57,7 +57,7 @@ export default function Karte() {
         >
           <GeoJSON
             data={jsonData}
-            style={{ color: 'purple', fill: true, fillColor: '#B0B0B0',fillOpacity:1 }}
+            style={{fill: true, fillColor: '#000',fillOpacity:1 }}
           />
         </TileLayer>
       </MapContainer>
