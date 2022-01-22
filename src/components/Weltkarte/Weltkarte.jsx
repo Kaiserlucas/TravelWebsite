@@ -35,22 +35,27 @@ export default function Karte() {
   }, []);
 
   function besuchteLänder() {
-    for (const country of countries) {
-      switch (worldmap.properties.ADMIN) {
-        case country:
-          return 'black';
-        default:
-          return 'beige';
+    for (let i = 0; i < worldmap.features.length; i++) {
+      for (const country of countries) {
+        switch (worldmap.features[i].properties.ADMIN) {
+          case country:
+            return 'black';
+          case "Germany":
+              return 'purple';
+          default:
+            return 'beige';
+        }
       }
     }
   }
 
   return (
+
     <div>
       <MapContainer className="map" center={[0, 0]} zoom={3}>
         <GeoJSON
           data={worldmap.features}
-          style={ (current) =>({
+          style={(current) => ({
             weight: 1,
             color: 'gray',
             fill: true,
