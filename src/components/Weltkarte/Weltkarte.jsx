@@ -39,13 +39,15 @@ export default function Karte() {
     }
     wrapper();
     wrapper2();
-  },[jsonData,countries]);
+  },[]);
  console.log(`JSON ${jsonData}`);
  console.log(`Countries: ${countries}`);
 
   
   return (
+    
     <div className="mapdata-container">
+      <div className='Test'>{JSON.stringify(jsonData)}</div>
       <MapContainer
         className="map"
         style={{ height: '100vh', width: '100vw' }}
