@@ -34,30 +34,28 @@ export default function Karte() {
     wrapper2();
   }, []);
 
-  function besuchteLänder() {
-   
-    for (const country of worldmap.features) {
+  function besuchteLänder(feature) {
+ 
       for (const visitedCountry of countries) {
-          if (country.properties.ADMIN === visitedCountry) {
-            return 'black';
-          } 
-          else if (country.properties.ADMIN === 'Germany') {
+          if (feature.properties.ADMIN === visitedCountry) {
             return 'purple';
+          } 
+          else if (feature.properties.ADMIN === 'Germany') {
+            return 'red';
           }
         }
       }
-    }
   
   return (
     <div>
       <MapContainer className="map" center={[0, 0]} zoom={3}>
         <GeoJSON
           data={worldmap.features}
-          style={(current) => ({
+          style={(feature) => ({
             weight: 1,
             color: 'gray',
             fill: true,
-            fillColor: besuchteLänder(),
+            fillColor: besuchteLänder(feature),
             fillOpacity: 1,
           })}
         />
