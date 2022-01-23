@@ -2,16 +2,8 @@ import { useEffect } from 'react';
 import './style.css';
 import worldmap from '../../ressources/worldmap.json'
 import { saveTrip } from '../../utils/api';
+import Trip from '../Trip/Trip';
 
-class Trip {
-  constructor(uuid, tripName, destination, start, end) {
-    this.uuid = uuid;
-    this.tripName = tripName;
-    this.destination = destination;
-    this.start = start;
-    this.end = end;
-  }
-}
 
 export default function KartePopup({visible}) {
   useEffect(() => {

@@ -3,21 +3,7 @@ import './style.css';
 import { getTrips,deleteTrip,editTrip,saveTrip} from '../../utils/api';
 import createCountryDropdown from '../NeueReisen/NeueReisen'
 import worldmap from '../../ressources/worldmap.json';
-
-
-
-class Trip {
-  constructor(uuid, tripName, destination, start, end) {
-    this.uuid = uuid;
-    this.tripName = tripName;
-    this.destination = destination;
-    this.start = start;
-    this.end = end;
-  }
-}
-
-
-
+import Trip from '../Trip/Trip';
 export default function Reisekarten({ reisekarten }) {
   
   const displayData = async () => {
@@ -171,7 +157,7 @@ export default function Reisekarten({ reisekarten }) {
       editForm.appendChild(enddateInput);
       editForm.appendChild(submitButton);
 
-      createCountryDropdown(worldmap, destinationInput);
+      //createCountryDropdown(worldmap, destinationInput);
       destinationInput.value = parent.querySelector('.destination').innerText;
 
       editForm.addEventListener('submit', () => {
