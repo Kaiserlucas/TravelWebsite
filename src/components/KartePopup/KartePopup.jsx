@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import './style.css';
 import worldmap from '../../ressources/worldmap.json'
+import { saveTrip } from '../../utils/api';
 
 class Trip {
   constructor(uuid, tripName, destination, start, end) {
@@ -45,10 +46,7 @@ export default function KartePopup({visible}) {
       destination.value = '';
       start.value = '';
       end.value = '';
-      saveTrip(trip).then(() => {
-        setTimeout(displayData, 500);
-        setTimeout(displayData, 2000);
-      });
+      saveTrip(trip);
     });
 
   }
