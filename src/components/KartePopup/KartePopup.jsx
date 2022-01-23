@@ -48,7 +48,10 @@ export default function KartePopup({visible}) {
           saveTrip(trip);
         });
       }
+      if(visible){
       init();
+
+      }
   })
 
   
