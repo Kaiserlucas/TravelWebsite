@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
-import { getTrips,deleteTrip,editTrip,saveTrip} from '../../utils/api';
-import createCountryDropdown from '../NeueReisen/NeueReisen'
+import { getTrips, deleteTrip, editTrip, saveTrip } from '../../utils/api';
+import createCountryDropdown from '../NeueReisen/NeueReisen';
 import worldmap from '../../ressources/worldmap.json';
 import Trip from '../Trip/Trip';
 export default function Reisekarten({ reisekarten }) {
-  
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const createCountryDropdown = async (worldmap, element) => {
+      for (const country of worldmap.features) {
+        const dropdownElement = document.createElement('option');
+        dropdownElement.value = country.properties.ADMIN;
+        dropdownElement.text = country.properties.ADMIN;
+        element.appendChild(dropdownElement);
+      }
+    };
+    createCountryDropdown(worldmap, destinationInput);
+    setLoaded(true);
+  });
+
   const displayData = async () => {
     const yourTrips = document.querySelector('.yourtrips');
     const trips = await getTrips();
@@ -156,8 +170,9 @@ export default function Reisekarten({ reisekarten }) {
       //editForm.appendChild(enddateLabel);
       editForm.appendChild(enddateInput);
       editForm.appendChild(submitButton);
-
-      //createCountryDropdown(worldmap, destinationInput);
+      if (loaded) {
+        createCountryDropdown(worldmap, destinationInput);
+      }
       destinationInput.value = parent.querySelector('.destination').innerText;
 
       editForm.addEventListener('submit', () => {
@@ -203,7 +218,7 @@ export default function Reisekarten({ reisekarten }) {
       destination.value = '';
       start.value = '';
       end.value = '';
-      saveTrip(trip).then(() => { 
+      saveTrip(trip).then(() => {
         setTimeout(displayData, 500);
         setTimeout(displayData, 2000);
       });
@@ -212,7 +227,6 @@ export default function Reisekarten({ reisekarten }) {
     displayData();
   }
   init();
-  return (
- <></>
-  );
+
+  return <></>;
 }
