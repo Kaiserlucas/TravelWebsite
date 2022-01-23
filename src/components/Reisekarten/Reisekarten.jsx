@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import './style.css';
 import { getTrips,deleteTrip,editTrip,saveTrip} from '../../utils/api';
 import createCountryDropdown from '../NeueReisen/NeueReisen'
@@ -6,28 +6,26 @@ import worldmap from '../../ressources/worldmap.json';
 
 
 
-
+class Trip {
+  constructor(uuid, tripName, destination, start, end) {
+    this.uuid = uuid;
+    this.tripName = tripName;
+    this.destination = destination;
+    this.start = start;
+    this.end = end;
+  }
+}
 
 
 
 export default function Reisekarten({ reisekarten }) {
-   useEffect(() => {
-      const createCountryDropdown = async (worldmap, element) => {
-       for (const country of worldmap.features) {
-         const dropdownElement = document.createElement('option');
-         dropdownElement.value = country.properties.ADMIN;
-         dropdownElement.text = country.properties.ADMIN;
-         element.appendChild(dropdownElement);
-       }
-     };
-     createCountryDropdown(worldmap, document.querySelector('#destination'));
-   });
+  
   const displayData = async () => {
     const yourTrips = document.querySelector('.yourtrips');
     const trips = await getTrips();
-
+    console.log(trips);
     if (trips.message === 'You need to be logged in to see this page.') {
-      window.location.href = 'login.html';
+      window.location.href = 'login';
     }
 
     //Clear all existing trips
@@ -227,7 +225,6 @@ export default function Reisekarten({ reisekarten }) {
 
     displayData();
   }
-  
   return (
     <div>
       <div className="ballon">
@@ -236,13 +233,4 @@ export default function Reisekarten({ reisekarten }) {
       </div>
     </div>
   );
-}
-class Trip {
-  constructor(uuid, tripName, destination, start, end) {
-    this.uuid = uuid;
-    this.tripName = tripName;
-    this.destination = destination;
-    this.start = start;
-    this.end = end;
-  }
 }
