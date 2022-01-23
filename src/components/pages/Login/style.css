@@ -6,7 +6,10 @@
 
 body {
   font-family: Montserrat, sans-serif;
-  background-image: url('../../../ressources/wolkenundso.jpg');
+
+}
+.bg-container{
+    background-image: url('../../../ressources/wolkenundso.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;

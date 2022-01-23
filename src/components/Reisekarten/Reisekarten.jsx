@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
 import { getTrips, deleteTrip, editTrip, saveTrip } from '../../utils/api';
-import createCountryDropdown from '../NeueReisen/NeueReisen';
 import worldmap from '../../ressources/worldmap.json';
 import Trip from '../Trip/Trip';
 export default function Reisekarten({ reisekarten }) {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    init();
-    setLoaded(true);
-  });
+  const createCountryDropdown = async (worldmap, element) => {
+    for (const country of worldmap.features) {
+      const dropdownElement = document.createElement('option');
+      dropdownElement.value = country.properties.ADMIN;
+      dropdownElement.text = country.properties.ADMIN;
+      element.appendChild(dropdownElement);
+    }
+  };
 
   const displayData = async () => {
     const yourTrips = document.querySelector('.yourtrips');
@@ -162,9 +163,9 @@ export default function Reisekarten({ reisekarten }) {
       //editForm.appendChild(enddateLabel);
       editForm.appendChild(enddateInput);
       editForm.appendChild(submitButton);
-      if (loaded) {
-        createCountryDropdown(worldmap, destinationInput);
-      }
+
+      createCountryDropdown(worldmap, destinationInput);
+
       destinationInput.value = parent.querySelector('.destination').innerText;
 
       editForm.addEventListener('submit', () => {
@@ -218,6 +219,7 @@ export default function Reisekarten({ reisekarten }) {
 
     displayData();
   }
+  init();
 
   return <></>;
 }

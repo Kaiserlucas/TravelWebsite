@@ -7,9 +7,6 @@
   align-items: center;
 }
 
-body{
-  background-image: none;
-}
 /* required styles */
 
 .leaflet-pane,

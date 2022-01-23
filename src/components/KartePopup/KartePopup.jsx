@@ -1,46 +1,49 @@
 import { useEffect } from 'react';
 import './style.css';
-import worldmap from '../../ressources/worldmap.json'
+import worldmap from '../../ressources/worldmap.json';
 import { saveTrip } from '../../utils/api';
 import Trip from '../Trip/Trip';
 import createCountryDropdown from '../NeueReisen/NeueReisen';
 
-
-
-export default function KartePopup({visible}) {
+export default function KartePopup({ visible }) {
+  function init() {
+    const createButton = document.querySelector('#createformpopup');
+    createButton.addEventListener('submit', () => {
+      const name = document.querySelector('#travelnamepopup');
+      const destination = document.querySelector('#destinationpopup');
+      const start = document.querySelector('#startdatepopup');
+      const end = document.querySelector('#enddatepopup');
+      const trip = new Trip(
+        1,
+        name.value,
+        destination.value,
+        start.value,
+        end.value
+      );
+      name.value = '';
+      destination.value = '';
+      start.value = '';
+      end.value = '';
+      saveTrip(trip);
+    });
+  }
   useEffect(() => {
+    const createCountryDropdown = async (worldmap, element) => {
+      for (const country of worldmap.features) {
+        const dropdownElement = document.createElement('option');
+        dropdownElement.value = country.properties.ADMIN;
+        dropdownElement.text = country.properties.ADMIN;
+        element.appendChild(dropdownElement);
+      }
+    };
     createCountryDropdown(
       worldmap,
       document.querySelector('#destinationpopup')
     );
-      function init() {
-        const createButton = document.querySelector('#createformpopup');
-        createButton.addEventListener('submit', () => {
-          const name = document.querySelector('#travelnamepopup');
-          const destination = document.querySelector('#destinationpopup');
-          const start = document.querySelector('#startdatepopup');
-          const end = document.querySelector('#enddatepopup');
-          const trip = new Trip(
-            1,
-            name.value,
-            destination.value,
-            start.value,
-            end.value
-          );
-          name.value = '';
-          destination.value = '';
-          start.value = '';
-          end.value = '';
-          saveTrip(trip);
-        });
-      }
-      if(visible){
-      init();
 
-      }
-  })
+    if (visible) init();
+  });
 
-  
   return (
     <>
       {visible ? (
