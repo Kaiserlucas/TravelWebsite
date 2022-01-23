@@ -3,18 +3,12 @@ import './style.css';
 import worldmap from '../../ressources/worldmap.json'
 import { saveTrip } from '../../utils/api';
 import Trip from '../Trip/Trip';
+import createCountryDropdown from '../NeueReisen/NeueReisen';
+
 
 
 export default function KartePopup({visible}) {
   useEffect(() => {
-    const createCountryDropdown = async (worldmap, element) => {
-      for (const country of worldmap.features) {
-        const dropdownElement = document.createElement('option');
-        dropdownElement.value = country.properties.ADMIN;
-        dropdownElement.text = country.properties.ADMIN;
-        element.appendChild(dropdownElement);
-      }
-    };
     createCountryDropdown(
       worldmap,
       document.querySelector('#destinationpopup')
