@@ -217,7 +217,7 @@ export default function Reisekarten({ reisekarten }) {
       destination.value = '';
       start.value = '';
       end.value = '';
-      saveTrip(trip).then(() => {
+      saveTrip(trip).then(() => { 
         setTimeout(displayData, 500);
         setTimeout(displayData, 2000);
       });
