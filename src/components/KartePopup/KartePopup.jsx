@@ -27,30 +27,30 @@ export default function KartePopup({visible}) {
       worldmap,
       document.querySelector('#destinationpopup')
     );
+      function init() {
+        const createButton = document.querySelector('#createformpopup');
+        createButton.addEventListener('submit', () => {
+          const name = document.querySelector('#travelnamepopup');
+          const destination = document.querySelector('#destinationpopup');
+          const start = document.querySelector('#startdatepopup');
+          const end = document.querySelector('#enddatepopup');
+          const trip = new Trip(
+            1,
+            name.value,
+            destination.value,
+            start.value,
+            end.value
+          );
+          name.value = '';
+          destination.value = '';
+          start.value = '';
+          end.value = '';
+          saveTrip(trip);
+        });
+      }
+      init();
   })
-  function init() {
-    const createButton = document.querySelector('#createformpopup');
-    createButton.addEventListener('submit', () => {
-      const name = document.querySelector('#travelnamepopup');
-      const destination = document.querySelector('#destinationpopup');
-      const start = document.querySelector('#startdatepopup');
-      const end = document.querySelector('#enddatepopup');
-      const trip = new Trip(
-        1,
-        name.value,
-        destination.value,
-        start.value,
-        end.value
-      );
-      name.value = '';
-      destination.value = '';
-      start.value = '';
-      end.value = '';
-      saveTrip(trip);
-    });
 
-  }
-  init();
   
   return (
     <>
