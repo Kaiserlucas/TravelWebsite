@@ -8,16 +8,7 @@ export default function Reisekarten({ reisekarten }) {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const createCountryDropdown = async (worldmap, element) => {
-      for (const country of worldmap.features) {
-        const dropdownElement = document.createElement('option');
-        dropdownElement.value = country.properties.ADMIN;
-        dropdownElement.text = country.properties.ADMIN;
-        element.appendChild(dropdownElement);
-      }
-    };
     init();
-    createCountryDropdown(worldmap, document.querySelector('select'));
     setLoaded(true);
   });
 
