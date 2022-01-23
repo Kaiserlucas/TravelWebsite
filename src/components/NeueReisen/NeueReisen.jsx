@@ -7,7 +7,7 @@ import worldmap from '../../ressources/worldmap.json';
 export default function NeueReisen() {
  
   useEffect(() => {
- const createCountryDropdown = async (worldmap, element) => {
+  const createCountryDropdown = async (worldmap, element) => {
    for (const country of worldmap.features) {
      const dropdownElement = document.createElement('option');
      dropdownElement.value = country.properties.ADMIN;
