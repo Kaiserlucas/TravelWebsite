@@ -16,7 +16,7 @@ export default function NeueReisen() {
       }
     };
     createCountryDropdown(worldmap, document.querySelector('#destination'));
-    setLoading(false);
+    //setLoading(false);
   });
   return (
     <div>
