@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.c1587bed.css",
-    "main.js": "/static/js/main.5da0a99f.js",
+    "main.js": "/static/js/main.6fe94867.js",
     "static/media/wolkenundso.jpg": "/static/media/wolkenundso.12082e3972c5e3e83097.jpg",
     "static/media/ballon3.jpg": "/static/media/ballon3.cef9d99e11349a4f7983.jpg",
     "index.html": "/index.html",
     "main.c1587bed.css.map": "/static/css/main.c1587bed.css.map",
-    "main.5da0a99f.js.map": "/static/js/main.5da0a99f.js.map"
+    "main.6fe94867.js.map": "/static/js/main.6fe94867.js.map"
   },
   "entrypoints": [
     "static/css/main.c1587bed.css",
-    "static/js/main.5da0a99f.js"
+    "static/js/main.6fe94867.js"
   ]
 }
