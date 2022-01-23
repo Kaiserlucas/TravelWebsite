@@ -2,6 +2,9 @@
   width: 100vw !important;
   height: 100vh !important;
   background-color: lightblue !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body{

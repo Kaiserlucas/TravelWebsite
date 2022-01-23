@@ -1,0 +1,32 @@
+.createtrip{
+    background-image: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: fit-content;
+    height: fit-content;
+    z-index: 1000;
+    opacity: 0.9;
+    border-radius: 40px;
+
+}
+#createform{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#createform input,#createform select {
+    width: 440px;
+    height: 50px;
+}
+#createform input{
+    flex-direction: row;
+}
+
+.createtrip  *{
+    z-index: 1000;
+}
+#createbutton{
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 0;
+}

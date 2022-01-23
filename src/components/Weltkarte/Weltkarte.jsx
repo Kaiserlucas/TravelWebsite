@@ -4,10 +4,12 @@ import './style.css';
 import { getTrips, getJson } from '../../utils/api';
 import { useEffect } from 'react';
 import worldmap from '../../ressources/worldmap.json';
+import KartePopup from '../KartePopup/KartePopup';
 
 export default function Karte() {
   // const [jsonData, setJsonData] = useState([]);
   const [countries, setCountries] = useState([]);
+  const [popupVisible, setPopupVisible] = useState(false);
   useEffect(() => {
     const visitedCountries = async () => {
       console.log('Trips werden gefetcht');
@@ -35,31 +37,45 @@ export default function Karte() {
   }, []);
 
   function besuchteLänder(feature) {
- 
-      for (const visitedCountry of countries) {
-          if (feature.properties.ADMIN === visitedCountry) {
-            return 'purple';
-          } 
-          else if (feature.properties.ADMIN === 'Germany') {
-            return 'red';
-          }
-        }
+    for (const visitedCountry of countries) {
+      if (feature.properties.ADMIN === visitedCountry) {
+        return 'purple';
+      } else if (feature.properties.ADMIN === 'Germany') {
+        return 'red';
       }
-  
+    }
+  }
+
+  function onEachFeature(feature, layer) {
+    layer.on({
+      click: clickToFeature.bind(this)
+    });
+  }
+
+ function clickToFeature(e) {
+    var layer = e.target;
+    console.log('I clicked on ', layer.feature.properties.ADMIN);
+    setPopupVisible(true);
+  };
+
   return (
-    <div>
+    <>
       <MapContainer className="map" center={[0, 0]} zoom={3}>
+        <KartePopup visible={popupVisible}  />
+
         <GeoJSON
           data={worldmap.features}
           style={(feature) => ({
-            weight: 1,
+            stroke: false,
+            weight: 2,
             color: 'gray',
             fill: true,
             fillColor: besuchteLänder(feature),
             fillOpacity: 1,
           })}
+          onEachFeature={onEachFeature.bind(this)}
         />
       </MapContainer>
-    </div>
+    </>
   );
 }
