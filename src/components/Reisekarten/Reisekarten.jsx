@@ -16,7 +16,8 @@ export default function Reisekarten({ reisekarten }) {
         element.appendChild(dropdownElement);
       }
     };
-    createCountryDropdown(worldmap, destinationInput);
+    init();
+    createCountryDropdown(worldmap, document.querySelector('select'));
     setLoaded(true);
   });
 
@@ -226,7 +227,6 @@ export default function Reisekarten({ reisekarten }) {
 
     displayData();
   }
-  init();
 
   return <></>;
 }
