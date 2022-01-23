@@ -4,7 +4,7 @@ import worldmap from '../../ressources/worldmap.json';
 import Reisekarten from '../Reisekarten/Reisekarten';
 
 export default function NeueReisen() {
-  const loading = true;
+  let loading = true;
 
   useEffect(() => {
     const createCountryDropdown = async (worldmap, element) => {
