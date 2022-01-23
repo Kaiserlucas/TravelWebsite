@@ -59,12 +59,12 @@ export default function Reisekarten({ reisekarten }) {
 
       //Buttons
       const formEdit = document.createElement('form');
-      formEdit.setAttribute('action', 'reisen.html');
-      formEdit.setAttribute('onsubmit', 'return false;');
+      formEdit.setAttribute('action', 'reisen');
+      formEdit.setAttribute('onSubmit', 'return false;');
 
       const formDelete = document.createElement('form');
-      formDelete.setAttribute('action', 'reisen.html');
-      formDelete.setAttribute('onsubmit', 'return false;');
+      formDelete.setAttribute('action', 'reisen');
+      formDelete.setAttribute('onSubmit', 'return false;');
 
       const buttonEdit = document.createElement('button');
       buttonEdit.setAttribute('type', 'submit');
@@ -139,7 +139,7 @@ export default function Reisekarten({ reisekarten }) {
       destinationInput.setAttribute('required', 'required');
       startdateInput.setAttribute('required', 'required');
       enddateInput.setAttribute('required', 'required');
-      editForm.setAttribute('onsubmit', 'return false;');
+      editForm.setAttribute('onSubmit', 'return false;');
 
       tripnameInput.className = 'trip-element nameInput';
       destinationInput.className = 'trip-element destinationInput';
