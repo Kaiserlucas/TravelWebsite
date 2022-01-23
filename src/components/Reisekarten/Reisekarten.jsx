@@ -225,6 +225,7 @@ export default function Reisekarten({ reisekarten }) {
 
     displayData();
   }
+  init();
   return (
     <div>
       <div className="ballon">
