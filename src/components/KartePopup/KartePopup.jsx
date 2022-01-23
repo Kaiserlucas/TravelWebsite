@@ -11,33 +11,47 @@ export default function KartePopup({visible}) {
         element.appendChild(dropdownElement);
       }
     };
-    createCountryDropdown(worldmap, document.querySelector('#destination'));
+    createCountryDropdown(
+      worldmap,
+      document.querySelector('#destinationpopup')
+    );
   })
+  
   return (
     <>
       {visible ? (
-        <div className="createtrip">
+        <div className="createtrippopup">
           <form
             action=""
-            id="createform"
+            id="createformpopup"
             onSubmit={() => {
               return false;
             }}
           >
-            <label htmlFor="travelname" >Reisename</label>
-            <input type="text" id="travelname" name="travelname" required />
-            <label htmlFor="destination">Reiseziel</label>
-            <select id="destination" name="destination"></select>
-            <label htmlFor="startdate">Startdatum</label>
-            <input type="date" id="startdate" name="startdate" required />
-            <label htmlFor="enddate">Enddatum</label>
-            <input type="date" id="enddate" name="enddate" required />
-            <input type="submit" id="createbutton" value="Los" />
+            <label htmlFor="travelnamepopup">Reisename</label>
+            <input
+              type="text"
+              id="travelnamepopup"
+              name="travelnamepopup"
+              required
+            />
+            <label htmlFor="destinationpopup">Reiseziel</label>
+            <select id="destinationpopup" name="destinationpopup"></select>
+            <label htmlFor="startdatepopup">Startdatum</label>
+            <input
+              type="date"
+              id="startdatepopup"
+              name="startdatepopup"
+              required
+            />
+            <label htmlFor="enddatepopup">Enddatum</label>
+            <input type="date" id="enddatepopup" name="enddatepopup" required />
+            <input type="submit" id="createbuttonpopup" value="Los" />
           </form>
         </div>
       ) : (
         ''
       )}
-      </>
+    </>
   );
 }

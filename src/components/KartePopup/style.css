@@ -1,31 +1,36 @@
-.createtrip{
-    background-image: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+.createtrippopup{
+    background-image: none ;
+    padding: 50px ;
     width: fit-content;
     height: fit-content;
     z-index: 1000;
     opacity: 0.9;
     border-radius: 40px;
+    background-color: white;
+
 
 }
-#createform{
+#createformpopup{
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#createform input,#createform select {
+#createformpopup input,#createformpopup select {
     width: 440px;
     height: 50px;
 }
-#createform input{
+#startdatepopup,#enddatepopup{
+    text-align: center;
+}
+#createformpopup input{
     flex-direction: row;
 }
 
-.createtrip  *{
+.createtrippopup  *{
     z-index: 1000;
 }
-#createbutton{
+#createbuttonpopup{
     justify-content: center;
     margin-top: 30px;
     margin-left: 0;
