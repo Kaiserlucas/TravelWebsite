@@ -1,6 +1,17 @@
 import { useEffect } from 'react';
 import './style.css';
 import worldmap from '../../ressources/worldmap.json'
+
+class Trip {
+  constructor(uuid, tripName, destination, start, end) {
+    this.uuid = uuid;
+    this.tripName = tripName;
+    this.destination = destination;
+    this.start = start;
+    this.end = end;
+  }
+}
+
 export default function KartePopup({visible}) {
   useEffect(() => {
     const createCountryDropdown = async (worldmap, element) => {
@@ -16,6 +27,32 @@ export default function KartePopup({visible}) {
       document.querySelector('#destinationpopup')
     );
   })
+  function init() {
+    const createButton = document.querySelector('#createformpopup');
+    createButton.addEventListener('submit', () => {
+      const name = document.querySelector('#travelnamepopup');
+      const destination = document.querySelector('#destinationpopup');
+      const start = document.querySelector('#startdatepopup');
+      const end = document.querySelector('#enddatepopup');
+      const trip = new Trip(
+        1,
+        name.value,
+        destination.value,
+        start.value,
+        end.value
+      );
+      name.value = '';
+      destination.value = '';
+      start.value = '';
+      end.value = '';
+      saveTrip(trip).then(() => {
+        setTimeout(displayData, 500);
+        setTimeout(displayData, 2000);
+      });
+    });
+
+  }
+  init();
   
   return (
     <>
