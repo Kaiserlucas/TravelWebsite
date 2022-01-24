@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.0145e0d7.css",
-    "main.js": "/static/js/main.e7082e6f.js",
+    "main.css": "/static/css/main.b3676ed0.css",
+    "main.js": "/static/js/main.cf8e04ac.js",
     "static/media/wolkenundso.jpg": "/static/media/wolkenundso.12082e3972c5e3e83097.jpg",
+    "static/media/logo.png": "/static/media/logo.84effaba6cbe4f409305.png",
     "static/media/ballon3.jpg": "/static/media/ballon3.cef9d99e11349a4f7983.jpg",
     "index.html": "/index.html",
-    "main.0145e0d7.css.map": "/static/css/main.0145e0d7.css.map",
-    "main.e7082e6f.js.map": "/static/js/main.e7082e6f.js.map"
+    "main.b3676ed0.css.map": "/static/css/main.b3676ed0.css.map",
+    "main.cf8e04ac.js.map": "/static/js/main.cf8e04ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.0145e0d7.css",
-    "static/js/main.e7082e6f.js"
+    "static/css/main.b3676ed0.css",
+    "static/js/main.cf8e04ac.js"
   ]
 }
