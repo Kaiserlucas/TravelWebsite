@@ -1,7 +1,7 @@
-import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet';
+import { MapContainer, GeoJSON } from 'react-leaflet';
 import React, { useState } from 'react';
 import './style.css';
-import { getTrips, getJson } from '../../utils/api';
+import { getTrips } from '../../utils/api';
 import { useEffect } from 'react';
 import worldmap from '../../ressources/worldmap.json';
 import KartePopup from '../KartePopup/KartePopup';
@@ -10,6 +10,7 @@ export default function Karte() {
   // const [jsonData, setJsonData] = useState([]);
   const [countries, setCountries] = useState([]);
   const [popupVisible, setPopupVisible] = useState(false);
+  const [clickedCountry, setClickedCountry] = useState("");
   useEffect(() => {
     const visitedCountries = async () => {
       console.log('Trips werden gefetcht');
@@ -40,28 +41,27 @@ export default function Karte() {
     for (const visitedCountry of countries) {
       if (feature.properties.ADMIN === visitedCountry) {
         return 'purple';
-      } else if (feature.properties.ADMIN === 'Germany') {
-        return 'red';
       }
     }
   }
 
   function onEachFeature(feature, layer) {
     layer.on({
-      click: clickToFeature.bind(this)
+      click: clickToFeature.bind(this),
     });
   }
 
- function clickToFeature(e) {
+  function clickToFeature(e) {
     var layer = e.target;
     console.log('I clicked on ', layer.feature.properties.ADMIN);
     setPopupVisible(true);
-  };
+    setClickedCountry(layer.feature.properties.ADMIN);
+  }
 
   return (
     <>
       <MapContainer className="map" center={[0, 0]} zoom={3}>
-        <KartePopup visible={popupVisible}  />
+        <KartePopup visible={popupVisible} clickedCountry={clickedCountry} />
 
         <GeoJSON
           data={worldmap.features}

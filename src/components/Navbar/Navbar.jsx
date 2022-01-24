@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import Image from '../../ressources/logo.png';
 
 export default function Navbar() {
   return (
@@ -7,7 +8,7 @@ export default function Navbar() {
       <ul className="navlist">
         <li className="nav-item">
           <a href="karte">
-            <img id="logo" src="../../ressources/logo.png" alt="logo" />
+            <img id="logo" src={Image} alt="logo" />
           </a>
         </li>
         <li className="nav-item">

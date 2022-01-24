@@ -1,36 +1,36 @@
-.createtrippopup{
-    padding: 50px ;
-    width: fit-content;
-    height: fit-content;
-    z-index: 1000;
-    opacity: 0.9;
-    border-radius: 40px;
-    background-color: white;
+.createtrippopup {
+  padding: 50px;
+  width: fit-content;
+  height: fit-content;
+  z-index: 1000;
+  opacity: 0.9;
+  border-radius: 40px;
+  background-color: white;
+}
+#createformpopup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#createformpopup input,
+#createformpopup select {
+  width: 440px;
+  height: 50px;
+}
+#startdatepopup,
+#enddatepopup {
+  text-align: center;
+}
+#createformpopup input {
+  flex-direction: row;
+}
 
-
+.createtrippopup * {
+  z-index: 1000;
 }
-#createformpopup{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-#createformpopup input,#createformpopup select {
-    width: 440px;
-    height: 50px;
-}
-#startdatepopup,#enddatepopup{
-    text-align: center;
-}
-#createformpopup input{
-    flex-direction: row;
-}
-
-.createtrippopup  *{
-    z-index: 1000;
-}
-#createbuttonpopup{
-    justify-content: center;
-    margin-top: 30px;
-    margin-left: 0;
+#createbuttonpopup {
+  justify-content: center;
+  margin-top: 30px;
+  margin-left: 0;
 }

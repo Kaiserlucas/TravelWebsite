@@ -7,7 +7,7 @@
   text-align: center;
   padding-top: 30px;
   font-size: 3rem;
-  color: #FFF;
+  color: #fff;
   font-family: 'Trocchi', serif;
 }
 
@@ -18,7 +18,7 @@
   justify-content: center;
   align-content: space-between;
   flex-direction: column;
-  background-color:#f9b75d;
+  background-color: #f9b75d;
   width: 300px;
   height: auto;
   padding-bottom: 10px;
@@ -53,11 +53,10 @@
 .deleteButton:hover {
   background-color: #f9b75d;
 }
-.ballon{
-  background-image: url("../../ressources/ballon3.jpg");
+.ballon {
+  background-image: url('../../ressources/ballon3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: calc(100vh - 370px);
   font-size: 1.6rem;
-  
 }

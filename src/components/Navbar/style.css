@@ -6,10 +6,9 @@
 body {
   font-family: Montserrat, sans-serif;
   overflow-y: hidden;
- background-color: #b4dcfc
- ;
+  background-color: #b4dcfc;
 }
-.navbar{
+.navbar {
   background-color: white;
 }
 .navlist {
@@ -58,7 +57,6 @@ body {
 }
 @media (max-width: 950px) {
   .nav-item:first-child img {
-   margin-left: 0;
+    margin-left: 0;
   }
 }
-

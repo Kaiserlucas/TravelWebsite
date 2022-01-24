@@ -6,10 +6,9 @@
 
 body {
   font-family: Montserrat, sans-serif;
-
 }
-.bg-container{
-    background-image: url('../../../ressources/wolkenundso.jpg');
+.bg-container {
+  background-image: url('../../../ressources/wolkenundso.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -33,7 +32,6 @@ input[type='submit']:hover {
 .logintext {
   text-align: center;
   margin-top: 20px;
-  
 }
 .login {
   display: flex;
@@ -62,8 +60,7 @@ input[type='submit']:hover {
 }
 
 @media (max-width: 950px) {
-  body{
+  body {
     background-size: 160vh;
   }
- 
 }

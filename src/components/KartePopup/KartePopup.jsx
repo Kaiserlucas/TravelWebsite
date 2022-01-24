@@ -3,9 +3,8 @@ import './style.css';
 import worldmap from '../../ressources/worldmap.json';
 import { saveTrip } from '../../utils/api';
 import Trip from '../Trip/Trip';
-import createCountryDropdown from '../NeueReisen/NeueReisen';
 
-export default function KartePopup({ visible }) {
+export default function KartePopup({ visible, clickedCountry }) {
   function init() {
     const createButton = document.querySelector('#createformpopup');
     createButton.addEventListener('submit', () => {
@@ -63,7 +62,7 @@ export default function KartePopup({ visible }) {
               required
             />
             <label htmlFor="destinationpopup">Reiseziel</label>
-            <select id="destinationpopup" name="destinationpopup"></select>
+            <select id="destinationpopup" name="destinationpopup"value={clickedCountry} ></select>
             <label htmlFor="startdatepopup">Startdatum</label>
             <input
               type="date"
